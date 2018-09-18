@@ -14,9 +14,9 @@ jobs:
       - run:
           name: Create a virtualenv
           command: |
-            mkdir -p /tmp/venv/country_template
-            virtualenv /tmp/venv/country_template
-            echo "source /tmp/venv/country_template/bin/activate" >> $BASH_ENV
+            mkdir -p /tmp/venv/cote_d_ivoire
+            virtualenv /tmp/venv/cote_d_ivoire
+            echo "source /tmp/venv/cote_d_ivoire/bin/activate" >> $BASH_ENV
 
       - run:
           name: Install dependencies
@@ -28,7 +28,7 @@ jobs:
       - save_cache:
           key: v1-py2-{{ checksum "setup.py" }}
           paths:
-            - /tmp/venv/country_template
+            - /tmp/venv/cote_d_ivoire
 
       - run:
           name: Run tests
@@ -60,7 +60,7 @@ jobs:
       - run:
           name: Upload a Python package to Pypi
           command: |
-            source /tmp/venv/country_template/bin/activate
+            source /tmp/venv/cote_d_ivoire/bin/activate
             .circleci/publish-python-package.sh
 
       - run:
@@ -80,9 +80,9 @@ jobs:
       - run:
           name: Create a virtualenv
           command: |
-            mkdir -p /tmp/venv/country_template
-            python -m venv /tmp/venv/country_template
-            echo "source /tmp/venv/country_template/bin/activate" >> $BASH_ENV
+            mkdir -p /tmp/venv/cote_d_ivoire
+            python -m venv /tmp/venv/cote_d_ivoire
+            echo "source /tmp/venv/cote_d_ivoire/bin/activate" >> $BASH_ENV
 
       - run:
           name: Install dependencies
@@ -94,7 +94,7 @@ jobs:
       - save_cache:
           key: v1-py3-{{ checksum "setup.py" }}
           paths:
-            - /tmp/venv/country_template
+            - /tmp/venv/cote_d_ivoire
 
       - run:
           name: Run tests
@@ -126,7 +126,7 @@ jobs:
       - run:
           name: Upload a Python package to Pypi
           command: |
-            source /tmp/venv/country_template/bin/activate
+            source /tmp/venv/cote_d_ivoire/bin/activate
             .circleci/publish-python-package.sh
 
 workflows:

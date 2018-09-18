@@ -6,11 +6,11 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='OpenFisca-Country-Template',
+    name='OpenFisca-COTE_D_IVOIRE',
     version='3.3.0',
     author='OpenFisca Team',
     author_email='contact@openfisca.fr',
-    description=u'OpenFisca tax and benefit system for Country-Template',
+    description=u'OpenFisca tax and benefit system for COTE_D_IVOIRE',
     keywords='benefit microsimulation social tax',
     license='http://www.fsf.org/licensing/licenses/agpl-3.0.html',
     url='https://github.com/openfisca/country-template',

@@ -4,4 +4,4 @@ clean:
 
 test:
 	flake8
-	openfisca-run-test --country-package openfisca_country_template openfisca_country_template/tests
+	openfisca-run-test --country-package openfisca_cote_d_ivoire openfisca_cote_d_ivoire/tests
