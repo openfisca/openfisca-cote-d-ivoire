@@ -1,7 +1,7 @@
 {
     "persons": {
         "Alicia": {
-            "birth": {
+            "date_naissance": {
                 "ETERNITY": "1980-01-01"
             },
             "salary": {
@@ -12,7 +12,7 @@
             }
         },
         "Javier": {
-            "birth": {
+            "date_naissance": {
                 "ETERNITY": "1984-01-01"
             },
             "salary": {
