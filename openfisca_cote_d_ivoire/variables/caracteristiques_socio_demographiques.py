@@ -7,7 +7,7 @@
 # Import from openfisca-core the common Python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the Entities specifically defined for this tax and benefit system
-from openfisca_mali.entities import *
+from openfisca_cote_d_ivoire.entities import *
 
 
 class date_naissance(Variable):
@@ -35,3 +35,14 @@ class age(Variable):
         is_birthday_past = (date_naissance_month < period.start.month) + (date_naissance_month == period.start.month) * (birth_day <= period.start.day)
 
         return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)  # If the birthday is not passed this year, subtract one year
+
+
+class nombre_de_parts(Variable):
+    value_type = int
+    default_value = 1
+    entity = Person
+    definition_period = YEAR
+    label = "Nombre de parts fiscales"
+
+
+
