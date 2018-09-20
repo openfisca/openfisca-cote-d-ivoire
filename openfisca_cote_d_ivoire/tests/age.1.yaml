@@ -1,10 +1,18 @@
 # Test files describe situations and their expected outcomes
 # We can run this test on our command line using `openfisca-run-test age1.yaml`
 
-- name: test du tout debut
+- name: Non imposable
   period: 2016
-  input_variables: 
+  input_variables:
     salaire: 1000
-  output_variables: 
+  output_variables:
     salaire: 1000
-    impot_general_revenu: 10
+    impot_general_revenu: 0
+
+- name: Imposable première tranche
+  period: 2016
+  input_variables:
+    salaire: 1100
+  output_variables:
+    salaire: 1100
+    impot_general_revenu: 2

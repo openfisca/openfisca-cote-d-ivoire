@@ -1,34 +1,38 @@
 description: Bareme de Impot General sur le revenu
 brackets:
-- rate: 
-    value: 0.02
+- rate:
+    1950-01-01:
+      value: 0.02
   threshold:
-    value: 1000
-- rate: 
-    value: 0.1
+    1950-01-01:
+      value: 1000
+- rate:
+    1950-01-01:
+      value: 0.1
   threshold:
-    value: 2200000
-- rate: 
-    value: 0.15
+    1950-01-01:
+      value: 2200000
+- rate:
+    1950-01-01:
+      value: 0.15
   threshold:
-    value: 3600000
-- rate: 
-    value: 0.20
+    1950-01-01:
+      value: 3600000
+- rate:
+    1950-01-01:
+      value: 0.20
   threshold:
-    value: 5200000
-- rate: 
-    value: 0.24
+    1950-01-01:
+      value: 5200000
+- rate:
+    1950-01-01:
+      value: 0.24
   threshold:
-    value: 7200000
-- rate: 
-    value: 0.26
+    1950-01-01:
+      value: 7200000
+- rate:
+    1950-01-01:
+      value: 0.26
   threshold:
-    value: 9600000                  
-    
-#      RI/nombre de parts est entre    | taux |
-# | 12 600 001 <=salaire/nbr_de_part 20 000 000	  | 29%  |
-# | 20 000 001 <=salaire/nbr_de_part 30 000 000	  | 32%  |
-# | 30 000 001 <=salaire/nbr_de_part 40 000 000	  | 34%  |
-# | 40 000 001 <=salaire/nbr_de_part 50 000 000	  | 35%  |
-# | 50 000 001 <=salaire/nbr_de_part + 		      | 36%  |
-
+    1950-01-01:
+      value: 9600000
