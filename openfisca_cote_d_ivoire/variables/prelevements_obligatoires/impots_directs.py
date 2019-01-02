@@ -18,8 +18,8 @@ class impot_general_revenu(Variable):
     label = "Impôt général sur le revenu"
 
     def formula(person, period, parameters):
-        salaire = person('salaire', period)
-        nombre_de_parts = person('nombre_de_parts', period)
+        salaire = person.entity('salaire', period)
+        nombre_de_parts = person.entity('nombre_de_parts', period)
         bareme = parameters(period).taxes.income_tax_rate
         impot_general_revenu = bareme.calc(salaire / nombre_de_parts)
         return impot_general_revenu

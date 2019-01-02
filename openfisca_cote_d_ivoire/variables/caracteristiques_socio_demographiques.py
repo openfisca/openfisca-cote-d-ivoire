@@ -23,7 +23,7 @@ class age(Variable):
 
     # A person's age is computed according to its birth date.
     def formula(person, period, parameters):
-        date_naissance = person('date_naissance', period)
+        date_naissance = person.entity('date_naissance', period)
         birth_year = date_naissance.astype('datetime64[Y]').astype(int) + 1970
         birth_month = date_naissance.astype('datetime64[M]').astype(int) % 12 + 1
         birth_day = (date_naissance - date_naissance.astype('datetime64[M]') + 1).astype(int)
