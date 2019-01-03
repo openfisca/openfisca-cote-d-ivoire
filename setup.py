@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='OpenFisca-COTE_D_IVOIRE',
-    version='0.5.0',
+    version='0.5.1',
     author='OpenFisca Team',
     author_email='contact@openfisca.fr',
     description=u'OpenFisca tax and benefit system for COTE_D_IVOIRE',
@@ -16,7 +16,7 @@ setup(
     url='https://github.com/openfisca/country-template',
     include_package_data = True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core[web-api] >= 24.0, < 25.0',
+        'OpenFisca-Core[web-api] >= 25.2.2, < 26.0',
         ],
     extras_require = {
         'dev': [

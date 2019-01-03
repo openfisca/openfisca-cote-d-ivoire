@@ -3,16 +3,16 @@
 
 - name: Non imposable
   period: 2016
-  input_variables:
+  input:
     salaire: 1000
-  output_variables:
+  output:
     salaire: 1000
     impot_general_revenu: 0
 
 - name: Imposable première tranche
   period: 2016
-  input_variables:
+  input:
     salaire: 1100
-  output_variables:
+  output:
     salaire: 1100
     impot_general_revenu: 2
