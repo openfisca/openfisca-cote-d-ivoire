@@ -1,30 +1,18 @@
-Hi there!
+Bonjour à tout.te.s !
 
-I really enjoy OpenFisca, but I recently encountered an issue.
+J'aodre utiliser OpenFisca, mais je suis tombé sur un problème que je n'arrive pas à résoudre.
 
-### Here is what I did:
-
-
-### Here is what I expected to happen:
+### Voilà ce que j'ai fait:
 
 
-### Here is what actually happened:
+### Voilà ce que je pensais obtenir:
 
 
-### Here is data (or links to it) that can help you reproduce this issue:
+### Voilà ce que j'ai obtenu:
 
 
+### Voici des données supplémentaires (liens éventuels) qui peuvent vous aider à reproduire le problème:
 
-## Context
+## Contexte
 
-I identify more as a:
-
-- Analyst _(I make macroscopic computations on real populations)_.
-- Business expert _(I create tests and model legislation)_.
-- Commenter _(I make data visualisations)_.
-- Developer _(I create tools that use the existing OpenFisca code)_.
-- Historian _(I accumulate data based on past legislation values)_.
-- Lobbyist _(I model reforms to make them exist)_.
-- Producer _(I make computations on individual situations)_.
-
-(remove this line as well as all items in the list that don't fit your situation)
+Je donne quelques éléments de contexte de mon utilisation d'OpenFisca

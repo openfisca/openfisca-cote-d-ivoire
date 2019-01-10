@@ -1,17 +1,31 @@
-Thanks for contributing to OpenFisca ! Please remove this line, as well as, for each line below, the cases which are not relevant to your contribution :)
+Merci de contribuer à OpenFisca ! Effacez cette ligne ainsi que, pour chaque ligne ci-dessous, les cas ne correspondant pas à votre contribution :)
 
-* Tax and benefit system evolution. | Technical improvement. | Crash fix. | Minor change.
-* Impacted periods: all. | until DD/MM/YYYY. | from DD/MM/YYYY.
-* Impacted areas: `path/to/file/containing/impacted/variables`
-* Details:
-  - New feature or new behaviour description
-  - Cases for which an error was noticed
+* Évolution du système socio-fiscal. | Amélioration technique. | Correction d'un crash. | Changement mineur.
+* Périodes concernées : toutes. | jusqu'au JJ/MM/AAAA. | à partir du JJ/MM/AAAA.
+* Zones impactées : `chemin/vers/le/fichier/contenant/les/variables/impactées`.
+* Détails :
+  - Description de la fonctionnalité ajoutée ou du nouveau comportement adopté.
+  - Cas dans lesquels une erreur était constatée.
 
 - - - -
 
-These changes _(remove lines which are not relevant to your contribution)_:
+Ces changements (effacez les lignes ne correspondant pas à votre cas) :
 
-- Impact the OpenFisca-COTE_D_IVOIRE public API (for instance renaming or removing a variable)
-- Add a new feature (for instance adding a variable)
-- Fix or improve an already existing calculation.
-- Change non-functional parts of this repository (for instance editing the README)
+- Modifient l'API publique d'OpenFisca Côte d'Ivoire (par exemple renommage ou suppression de variables).
+- Ajoutent une fonctionnalité (par exemple ajout d'une variable).
+- Corrigent ou améliorent un calcul déjà existant.
+- Modifient des éléments non fonctionnels de ce dépôt (par exemple modification du README).
+
+- - - -
+
+Quelques conseils à prendre en compte :
+
+- [ ] Jetez un coup d'œil au [guide de contribution](https://github.com/openfisca/openfisca-cote-d-ivoire/blob/master/CONTRIBUTING.md).
+- [ ] Regardez s'il n'y a pas une [proposition introduisant ces mêmes changements](https://github.com/openfisca/openfisca-cote-d-ivoire/pulls).
+- [ ] Documentez votre contribution avec des références législatives.
+- [ ] Mettez à jour ou ajoutez des tests correspondant à votre contribution.
+- [ ] Augmentez le [numéro de version](https://speakerdeck.com/mattisg/git-session-2-strategies?slide=81) dans [`setup.py`](https://github.com/openfisca/openfisca-cote-d-ivoire/blob/master/setup.py).
+- [ ] Mettez à jour le [`CHANGELOG.md`](https://github.com/openfisca/openfisca-cote-d-ivoire/blob/master/CHANGELOG.md).
+- [ ] Assurez-vous de bien décrire votre contribution, comme indiqué ci-dessus
+
+Et surtout, n'hésitez pas à demander de l'aide ! :)

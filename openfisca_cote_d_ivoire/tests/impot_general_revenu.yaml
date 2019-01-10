@@ -1,0 +1,18 @@
+# Test files describe situations and their expected outcomes
+# We can run this test on our command line using `openfisca-run-test age1.yaml`
+
+- name: Non imposable
+  period: 2016
+  input:
+    salaire: 1000
+  output:
+    salaire: 1000
+    impot_general_revenu: 0
+
+- name: Imposable première tranche
+  period: 2016
+  input:
+    salaire: 1100
+  output:
+    salaire: 1100
+    impot_general_revenu: 2
