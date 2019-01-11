@@ -11,7 +11,9 @@ dist
 .pydevproject
 .settings
 .spyderproject
+.spyproject
 .vscode
+.pytest_cache/*
 
 # OS stuff
 

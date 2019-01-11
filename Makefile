@@ -36,5 +36,5 @@ check-style:
 test: clean check-syntax-errors check-style
 		@# Launch tests from openfisca_cote_d_ivoire/tests directory (and not .) because TaxBenefitSystem must be initialized
 		@# before parsing source files containing formulas.
-		@# pytest
+		pytest
 		openfisca-run-test --country-package openfisca_cote_d_ivoire openfisca_cote_d_ivoire/tests
