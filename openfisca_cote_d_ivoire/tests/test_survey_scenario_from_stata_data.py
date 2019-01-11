@@ -14,6 +14,9 @@ log = logging.getLogger(__file__)
 
 
 def test_load_stata_data():
+    circleci = 'CIRCLECI' in os.environ
+    if circleci:
+        pass
     config_parser = configparser.SafeConfigParser()
     config_parser.read(os.path.join(config_files_directory, 'raw_data.ini'))
     assert config_parser.has_section("cote_d_ivoire")
