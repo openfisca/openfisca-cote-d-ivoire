@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0 [#7](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/7)
+
+* Amélioration technique.
+  - Début de chargement des données
+
+
 ### 0.5.1 - [#6](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/6)
 
 * Technical change

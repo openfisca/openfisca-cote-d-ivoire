@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='OpenFisca-COTE_D_IVOIRE',
-    version='0.5.1',
+    version='0.6.0',
     author='OpenFisca Team',
     author_email='contact@openfisca.fr',
     description=u'OpenFisca tax and benefit system for COTE_D_IVOIRE',
