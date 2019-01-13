@@ -59,10 +59,8 @@ def create_dataframes_from_stata_data():
         })
 
     household_dataframe = None
+    # household_variables = ['hh_id']
 
-    household_variables = [
-        'hh_id'
-        ]
     return person_dataframe, household_dataframe
 
 

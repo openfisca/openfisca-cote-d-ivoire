@@ -10,7 +10,6 @@ from openfisca_survey_manager.utils import stata_files_to_data_frames
 from openfisca_cote_d_ivoire import CountryTaxBenefitSystem as CoteDIvoireTaxBenefitSystem
 
 
-
 class CoteDIvoireSurveyScenario(AbstractSurveyScenario):
 
     def __init__(self, tax_benefit_system = None, baseline_tax_benefit_system = None,
