@@ -25,12 +25,10 @@ def get_data_file_path():
 
 def create_dataframes_from_stata_data():
     data_file_path = get_data_file_path()
-    import pprint
-    dico_labels = pd.read_stata(data_file_path, iterator=True)
-    pprint.pprint(dico_labels.variable_labels())
+    # import pprint
+    # dico_labels = pd.read_stata(data_file_path, iterator=True)
+    # pprint.pprint(dico_labels.variable_labels())
     dataframe = pd.read_stata(data_file_path)
-    print(dataframe.link_to_head.value_counts(dropna = False))
-
     person_variables = [
         'age',
         'formel_informel',
@@ -51,24 +49,31 @@ def create_dataframes_from_stata_data():
             (person_dataframe.link_to_head != 'chef de menage') & (person_dataframe.link_to_head != 'epouse ou mari')
             )
         )
+
+    household_id_by_hhid = (person_dataframe.hhid
+        .drop_duplicates()
+        .sort_values()
+        .reset_index(drop = True)
+        .reset_index()
+        .rename(columns = {'index': 'household_id'})
+        .set_index('hhid')
+        .squeeze()
+        )
+
+    person_dataframe['household_id'] = person_dataframe['hhid'].map(household_id_by_hhid)
+    person_dataframe['person_id'] = range(len(person_dataframe))
     person_dataframe = person_dataframe.rename(columns = {
-        'id': 'person_id',
-        'hhid': 'household_id',
         'inc_pension_ind': 'pension',
         'sex': 'sexe'
         })
 
-    household_dataframe = None
-    # household_variables = ['hh_id']
-
+    household_dataframe = pd.DataFrame(
+        dict(household_id = range(person_dataframe.household_id.max()))
+        )
     return person_dataframe, household_dataframe
 
 
-def test_load_stata_data(create_dataframes = True):
-    circleci = 'CIRCLECI' in os.environ
-    if circleci:
-        return
-
+def create_data_from_stata(create_dataframes = True):
     year = 2017
     data = dict()
 
@@ -87,18 +92,48 @@ def test_load_stata_data(create_dataframes = True):
             # household = os.path.join(data_directory, 'household.dta'),
             person = data_file_path,
             )
+    return data
 
+
+def test_survey_scenario(create_dataframes = True):
+    circleci = 'CIRCLECI' in os.environ
+    if circleci:
+        return
+
+    year = 2017
+    data = create_data_from_stata(create_dataframes = create_dataframes)
     survey_scenario = CoteDIvoireSurveyScenario(
         data = data,
         year = year,
         )
-    df = survey_scenario.create_data_frame_by_entity(
-        variables = ['age', 'salaire', 'impot_general_revenu']
-        )['person']
+    df_by_entity = survey_scenario.create_data_frame_by_entity(
+        variables = ['age', 'salaire', 'impot_general_revenu', 'impots_directs']
+        )
 
-    print(df)
-    df.hist(bins = 50)
+    for entity, df in df_by_entity.items():
+        print(entity)
+        print(df)
+
+
+def test_ceq_survey_scenario(create_dataframes = True):
+    circleci = 'CIRCLECI' in os.environ
+    if circleci:
+        return
+
+    year = 2017
+    data = create_data_from_stata(create_dataframes = create_dataframes)
+    survey_scenario = CoteDIvoireSurveyScenario(
+        data = data,
+        year = year,
+        )
+    df_by_entity = survey_scenario.create_data_frame_by_entity(
+        variables = ['age', 'salaire', 'impot_general_revenu', 'impots_directs']
+        )
+
+    for entity, df in df_by_entity.items():
+        print(entity)
+        print(df)
 
 
 if __name__ == '__main__':
-    test_load_stata_data()
+    test_survey_scenario()
