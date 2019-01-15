@@ -137,3 +137,4 @@ def test_ceq_survey_scenario(create_dataframes = True):
 
 if __name__ == '__main__':
     test_survey_scenario()
+    test_ceq_survey_scenario()
