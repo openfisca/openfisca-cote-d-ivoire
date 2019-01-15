@@ -11,8 +11,8 @@ class impots_directs(Variable):
     label = "Impôts directs payés par le ménage"
 
     def formula(household, period):
-        impots = household.members('impot_general_revenu', period)
-        return household.sum(impots)
+        impot_general_revenu_individu = household.members('impot_general_revenu', period)
+        return household.sum(impot_general_revenu_individu)
 
 
 class impot_general_revenu(Variable):
