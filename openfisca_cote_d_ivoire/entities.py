@@ -28,19 +28,29 @@ Household = build_entity(
     ''',
     roles = [
         {
-            'key': 'parent',
-            'plural': 'parents',
-            'label': u'Parents',
-            'max': 2,
-            'subroles': ['first_parent', 'second_parent'],
-            'doc': u'The one or two adults in charge of the household.'
+            'key': 'personne_de_reference',
+            'plural': 'personnes_de_reference',
+            'label': u'Personne de reference (Chef-fe de ménage)',
+            'doc': u'La personne de référence dans le ménage.'
             },
         {
-            'key': 'child',
-            'plural': 'children',
-            'label': u'Child',
-            'doc': u'Other individuals living in the household.'
-            }
+            'key': 'conjoint',
+            'plural': 'conjoints',
+            'label': u'Conjoint de la personne de référence',
+            'doc': u'Le/la conjoint-e de la personne de référence.'
+            },
+        {
+            'key': 'enfant',
+            'plural': 'enfants',
+            'label': u'Enfant',
+            'doc': u'Enfant à la charge de la personne de référence et de son conjoint.'
+            },
+        {
+            'key': 'autre_membre',
+            'plural': 'autres_membres',
+            'label': u'Autres membres du ménage',
+            'doc': u'Membres du ménage différents de la personne de référence, de son/sa conjoint-e et de leurs enfants'
+            }    
         ]
     )
 
