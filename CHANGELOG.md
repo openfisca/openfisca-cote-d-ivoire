@@ -1,6 +1,6 @@
 # Changelog
 
-### 0.6.1 [#](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/)
+### 0.6.1 [#15](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/15)
 
 * Amélioration technique.
   - Ajout de tests
