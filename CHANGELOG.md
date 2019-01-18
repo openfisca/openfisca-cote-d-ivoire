@@ -1,5 +1,12 @@
 # Changelog
 
+### 0.6.1 [#](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/)
+
+* Amélioration technique.
+  - Ajout de tests
+  - Retire les teest python2
+
+
 ## 0.6.0 [#7](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/7)
 
 * Amélioration technique.
