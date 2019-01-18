@@ -1,1 +1,3 @@
-[]
+[
+  "openfisca_cote_d_ivoire/tests/test_survey_scenario_from_stata_data.py::test_load_stata_data"
+]

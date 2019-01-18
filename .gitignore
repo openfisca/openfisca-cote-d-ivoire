@@ -7,15 +7,16 @@ dist
 
 # Editors
 
+.pytest_cache
 .project
 .pydevproject
 .settings
 .spyderproject
 .spyproject
 .vscode
-.pytest_cache/*
 
 # OS stuff
 
 .DS_Store
 *~
+.pytest_cache/v/cache/nodeids
