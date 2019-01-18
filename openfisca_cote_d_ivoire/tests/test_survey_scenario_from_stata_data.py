@@ -111,8 +111,8 @@ def test_survey_scenario(create_dataframes = True):
         )
 
     for entity, df in df_by_entity.items():
-        print(entity)
-        print(df)
+        log.debug(entity)
+        log.debug(df)
 
 
 def test_ceq_survey_scenario(create_dataframes = True):
@@ -131,8 +131,8 @@ def test_ceq_survey_scenario(create_dataframes = True):
         )
 
     for entity, df in df_by_entity.items():
-        print(entity)
-        print(df)
+        log.debug(entity)
+        log.debug(df)
 
 
 if __name__ == '__main__':
