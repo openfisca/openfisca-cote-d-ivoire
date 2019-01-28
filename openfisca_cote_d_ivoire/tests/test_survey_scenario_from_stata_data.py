@@ -15,10 +15,12 @@ from openfisca_cote_d_ivoire.survey_scenarios import CoteDIvoireSurveyScenario
 log = logging.getLogger(__file__)
 
 
+config_parser = configparser.SafeConfigParser()
+config_parser.read(os.path.join(config_files_directory, 'raw_data.ini'))
+data_is_available = config_parser.has_section("cote_d_ivoire")
+
+
 def get_data_file_path():
-    config_parser = configparser.SafeConfigParser()
-    config_parser.read(os.path.join(config_files_directory, 'raw_data.ini'))
-    assert config_parser.has_section("cote_d_ivoire")
     file_path_by_year = dict(config_parser.items("cote_d_ivoire"))
     return file_path_by_year['2014']
 
@@ -97,7 +99,7 @@ def create_data_from_stata(create_dataframes = True):
 
 def test_survey_scenario(create_dataframes = True):
     circleci = 'CIRCLECI' in os.environ
-    if circleci:
+    if circleci or not data_is_available:
         return
 
     year = 2017
@@ -117,7 +119,7 @@ def test_survey_scenario(create_dataframes = True):
 
 def test_ceq_survey_scenario(create_dataframes = True):
     circleci = 'CIRCLECI' in os.environ
-    if circleci:
+    if circleci or not data_is_available:
         return
 
     year = 2017
