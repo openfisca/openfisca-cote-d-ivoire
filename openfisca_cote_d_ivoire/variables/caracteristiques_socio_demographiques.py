@@ -18,7 +18,7 @@ class occupation_principale_taxee(Variable):
     label = u"Variable binaire déterminant si les revenus de l'activité principale sont taxés ou non "
 
 
-class proprietaire_resid_principale(Variable):
+class proprietaire_residence_principale(Variable):
     value_type = bool
     entity = Household
     definition_period = YEAR
@@ -51,15 +51,15 @@ class nb_enfants_a_charge(Variable):
         nb_enfants_a_charge = household.nb_persons(Household.ENFANT)
         return nb_enfants_a_charge
 
-class nb_conjoint(Variable):
-    value_type = int
+class marie(Variable):
+    value_type = bool
     entity = Household
     definition_period = YEAR
     label = "Variable binaire indiquant si la personne de référence a un-e conjoint-e dans le ménage"
 
     def formula(household, period):
-        nb_conjoint = household.nb_persons(Household.CONJOINT)
-        return nb_conjoint
+        marie = household.nb_persons(Household.CONJOINT)
+        return marie
 
 class nombre_de_parts(Variable):
     value_type = int
