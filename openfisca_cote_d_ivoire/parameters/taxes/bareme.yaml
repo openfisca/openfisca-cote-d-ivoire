@@ -36,3 +36,33 @@ brackets:
   threshold:
     1950-01-01:
       value: 9600000
+- rate:
+    1950-01-01:
+      value: 0.29
+  threshold:
+    1950-01-01:
+      value: 12600000
+- rate:
+    1950-01-01:
+      value: 0.32
+  threshold:
+    1950-01-01:
+      value: 20000000
+- rate:
+    1950-01-01:
+      value: 0.34
+  threshold:
+    1950-01-01:
+      value: 30000000
+- rate:
+    1950-01-01:
+      value: 0.35
+  threshold:
+    1950-01-01:
+      value: 40000000
+- rate:
+    1950-01-01:
+      value: 0.36
+  threshold:
+    1950-01-01:
+      value: 50000000
