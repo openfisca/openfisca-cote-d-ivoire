@@ -38,25 +38,15 @@ class residence_principale_taxee(Variable):
     label = u"Variable binaire déterminant si le menage paie des impôts sur sa résidence principale"
 
 
-class nb_persons(Variable):
-    value_type = int
-    entity = Household
-    definition_period = YEAR
-    label = "Nombre de personnes dans le ménage"
-
-    def formula(household, period):
-        nb_persons = household.nb_persons()
-        return nb_persons
-
-class nb_enfants_a_charge(Variable):
+class nombre_enfants_a_charge(Variable):
     value_type = int
     entity = Household
     definition_period = YEAR
     label = "Nombre d'enfants de la personne de référence et de son/sa conjointe dans le ménage"
 
     def formula(household, period):
-        nb_enfants_a_charge = household.nb_persons(Household.ENFANT)
-        return nb_enfants_a_charge
+        nombre_enfants_a_charge = household.nb_persons(Household.ENFANT)
+        return nombre_enfants_a_charge
 
 class marie(Variable):
     value_type = bool
@@ -76,11 +66,22 @@ class nombre_de_parts(Variable):
     label = "Nombre de parts fiscales pour le calcul de l'impôt sur le revenu"
 
     def formula(household, period):
-        condition_pas_enfant=nb_enfants_a_charge = 0
-        condition_marie_ou_veuf_ve= marie + veuf_ve
+        condition_pas_enfant = nb_enfants_a_charge == 0
+        condition_marie_ou_veuf_ve = marie + veuf_ve
         return select(
-            [(not_(marie,1)+veuf_ve)*condition_pas_enfant,  marie*condition_pas_enfant, condition_marie_ou_veuf_ve*not_(condition_pas_enfant, 1), not_(condition_marie_ou_veuf_ve, 1)*not_(condition_pas_enfant, 1)],
-            [nombre_de_parts, nombre_de_parts+1, nombre_de_parts+1+(nb_enfants_a_charge/2), nombre_de_parts+0.5+(nb_enfants_a_charge/2)],
+            [
+                (not_(marie,1)+veuf_ve)*condition_pas_enfant, 
+                marie*condition_pas_enfant, 
+                condition_marie_ou_veuf_ve*not_(condition_pas_enfant, 1), 
+                not_(condition_marie_ou_veuf_ve, 1)*not_(condition_pas_enfant, 1)
+                ],
+
+            [   
+                nombre_de_parts, 
+                nombre_de_parts + 1, 
+                nombre_de_parts + 1 + (nb_enfants_a_charge/2), 
+                nombre_de_parts + 0.5 + (nb_enfants_a_charge/2)
+                ],
             )
         
 
