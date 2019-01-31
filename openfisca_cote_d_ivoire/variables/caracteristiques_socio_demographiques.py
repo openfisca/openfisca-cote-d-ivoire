@@ -8,34 +8,34 @@ class age(Variable):
     value_type = int
     entity = Person
     definition_period = YEAR
-    label = u"Âge de l'individu (en années)"
+    label = "Âge de l'individu (en années)"
 
 
 class veuf_ve(Variable):
     value_type = bool
     entity = Household
     definition_period = YEAR
-    label = u"Variable binaire déterminant si la personne de référence est veuf-ve ou pas"
+    label = "Variable binaire déterminant si la personne de référence est veuf-ve ou pas"
 
 
 class occupation_principale_taxee(Variable):
     value_type = bool
     entity = Person
     definition_period = YEAR
-    label = u"Variable binaire déterminant si les revenus de l'activité principale sont taxés ou non "
+    label = "Variable binaire déterminant si les revenus de l'activité principale sont taxés ou non "
 
 
 class proprietaire_residence_principale(Variable):
     value_type = bool
     entity = Household
     definition_period = YEAR
-    label = u"Variable binaire déterminant si l'habitation est détenue par le ménage"
+    label = "Variable binaire déterminant si l'habitation est détenue par le ménage"
 
 class residence_principale_taxee(Variable):
     value_type = bool
     entity = Household
     definition_period = YEAR
-    label = u"Variable binaire déterminant si le menage paie des impôts sur sa résidence principale"
+    label = "Variable binaire déterminant si le menage paie des impôts sur sa résidence principale"
 
 
 class nombre_enfants_a_charge(Variable):
@@ -70,10 +70,10 @@ class nombre_de_parts(Variable):
         condition_marie_ou_veuf_ve = marie + veuf_ve
         return select(
             [
-                (not_(marie,1)+veuf_ve)*condition_pas_enfant, 
-                marie*condition_pas_enfant, 
-                condition_marie_ou_veuf_ve*not_(condition_pas_enfant, 1), 
-                not_(condition_marie_ou_veuf_ve, 1)*not_(condition_pas_enfant, 1)
+                (not_(marie,1) + veuf_ve) * condition_pas_enfant, 
+                marie * condition_pas_enfant, 
+                condition_marie_ou_veuf_ve * not_(condition_pas_enfant, 1), 
+                not_(condition_marie_ou_veuf_ve, 1) * not_(condition_pas_enfant, 1)
                 ],
 
             [   
