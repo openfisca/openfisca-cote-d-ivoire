@@ -31,6 +31,7 @@ class proprietaire_residence_principale(Variable):
     definition_period = YEAR
     label = "Variable binaire déterminant si l'habitation est détenue par le ménage"
 
+
 class residence_principale_taxee(Variable):
     value_type = bool
     entity = Household
@@ -48,6 +49,7 @@ class nombre_enfants_a_charge(Variable):
         nombre_enfants_a_charge = household.nb_persons(Household.ENFANT)
         return nombre_enfants_a_charge
 
+
 class marie(Variable):
     value_type = bool
     entity = Household
@@ -57,6 +59,7 @@ class marie(Variable):
     def formula(household, period):
         marie = household.nb_persons(Household.CONJOINT)
         return marie
+
 
 class nombre_de_parts(Variable):
     value_type = int
@@ -77,10 +80,10 @@ class nombre_de_parts(Variable):
                 ],
 
             [   
-                nombre_de_parts, 
+                nombre_de_parts,
                 nombre_de_parts + 1, 
-                nombre_de_parts + 1 + (nb_enfants_a_charge/2), 
-                nombre_de_parts + 0.5 + (nb_enfants_a_charge/2)
+                nombre_de_parts + 1 + (nb_enfants_a_charge / 2), 
+                nombre_de_parts + 0.5 + (nb_enfants_a_charge / 2)
                 ],
             )
         

@@ -43,7 +43,7 @@ Household = build_entity(
             'key': 'enfant',
             'plural': 'enfants',
             'label': u'Enfant',
-            'doc': '''Enfant à la charge de la personne de référence et de son conjoint 
+            'doc': '''Enfant à la charge de la personne de référence et de son conjoint
             - il peut y avoir d'autres enfant dans le ménage '''
             },
         {
@@ -51,7 +51,7 @@ Household = build_entity(
             'plural': 'autres_membres',
             'label': u'Autres membres du ménage',
             'doc': u'Membres du ménage différents de la personne de référence, de son/sa conjoint-e et de leurs enfants'
-            }    
+            }
         ]
     )
 
