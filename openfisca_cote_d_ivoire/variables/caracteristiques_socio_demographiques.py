@@ -73,18 +73,16 @@ class nombre_de_parts(Variable):
         condition_marie_ou_veuf_ve = marie + veuf_ve
         return select(
             [
-                (not_(marie,1) + veuf_ve) * condition_pas_enfant, 
-                marie * condition_pas_enfant, 
-                condition_marie_ou_veuf_ve * not_(condition_pas_enfant, 1), 
+                (not_(marie, 1) + veuf_ve) * condition_pas_enfant,
+                marie * condition_pas_enfant,
+                condition_marie_ou_veuf_ve * not_(condition_pas_enfant, 1),
                 not_(condition_marie_ou_veuf_ve, 1) * not_(condition_pas_enfant, 1)
                 ],
 
-            [   
+            [
                 nombre_de_parts,
-                nombre_de_parts + 1, 
-                nombre_de_parts + 1 + (nb_enfants_a_charge / 2), 
+                nombre_de_parts + 1,
+                nombre_de_parts + 1 + (nb_enfants_a_charge / 2),
                 nombre_de_parts + 0.5 + (nb_enfants_a_charge / 2)
                 ],
             )
-        
-
