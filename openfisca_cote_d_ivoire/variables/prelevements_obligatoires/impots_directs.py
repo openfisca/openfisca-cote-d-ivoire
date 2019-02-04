@@ -23,7 +23,6 @@ class impot_general_revenu(Variable):
 
     def formula(person, period, parameters):
         salaire = person('salaire', period)
-        nombre_de_parts = person('nombre_de_parts', period)
-        bareme = parameters(period).taxes.bareme_impot_general_revenu
-        impot_general_revenu = bareme.calc(salaire / nombre_de_parts)
+        bareme = parameters(period).taxes.impot_revenu.bareme
+        impot_general_revenu = bareme.calc(salaire * parameters(period).taxes.impot_revenu.abattement / person.household('nombre_de_parts', period))
         return impot_general_revenu
