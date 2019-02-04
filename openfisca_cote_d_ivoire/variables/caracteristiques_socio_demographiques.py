@@ -69,7 +69,7 @@ class nombre_de_parts(Variable):
     label = "Nombre de parts fiscales pour le calcul de l'impôt sur le revenu"
 
     def formula(household, period):
-        condition_pas_enfant = nb_enfants_a_charge == 0
+        condition_pas_enfant = nombre_enfants_a_charge == 0
         condition_marie_ou_veuf_ve = marie + veuf_ve
         return select(
             [
@@ -82,7 +82,7 @@ class nombre_de_parts(Variable):
             [
                 nombre_de_parts,
                 nombre_de_parts + 1,
-                nombre_de_parts + 1 + (nb_enfants_a_charge / 2),
-                nombre_de_parts + 0.5 + (nb_enfants_a_charge / 2)
+                nombre_de_parts + 1 + (nombre_enfants_a_charge / 2),
+                nombre_de_parts + 0.5 + (nombre_enfants_a_charge / 2)
                 ],
             )
