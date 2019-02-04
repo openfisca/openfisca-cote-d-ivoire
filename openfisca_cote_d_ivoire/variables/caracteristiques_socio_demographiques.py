@@ -57,7 +57,7 @@ class marie(Variable):
     label = "Variable binaire indiquant si la personne de référence a un-e conjoint-e dans le ménage"
 
     def formula(household, period):
-        marie = household.nb_persons(Household.CONJOINT)
+        marie = household.nb_persons(Household.CONJOINT) > 0
         return marie
 
 
@@ -69,14 +69,18 @@ class nombre_de_parts(Variable):
     label = "Nombre de parts fiscales pour le calcul de l'impôt sur le revenu"
 
     def formula(household, period):
+        nombre_enfants_a_charge = household('nombre_enfants_a_charge', period)
+        marie = household('marie', period)
+        veuf_ve = household('veuf_ve', period)
         condition_pas_enfant = nombre_enfants_a_charge == 0
         condition_marie_ou_veuf_ve = marie + veuf_ve
+        nombre_de_parts = 1
         return select(
             [
-                (not_(marie, 1) + veuf_ve) * condition_pas_enfant,
+                (not_(marie) + veuf_ve) * condition_pas_enfant,
                 marie * condition_pas_enfant,
-                condition_marie_ou_veuf_ve * not_(condition_pas_enfant, 1),
-                not_(condition_marie_ou_veuf_ve, 1) * not_(condition_pas_enfant, 1)
+                condition_marie_ou_veuf_ve * not_(condition_pas_enfant),
+                not_(condition_marie_ou_veuf_ve) * not_(condition_pas_enfant)
                 ],
 
             [

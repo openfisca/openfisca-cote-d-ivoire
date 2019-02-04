@@ -12,7 +12,7 @@
 - name: Imposable première tranche
   period: 2016
   input:
-    salaire: 1100
+    salaire: 1250 + 100
   output:
-    salaire: 1100
-    impot_general_revenu: 2
+    salaire: 1250 + 100
+    impot_general_revenu: 1.6
