@@ -1,0 +1,4 @@
+description: Abattement pour l'impôt sur le revenu
+unit: /1
+values: 
+  1950-01-01: 0.8
