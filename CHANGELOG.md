@@ -1,5 +1,10 @@
 # Changelog
 
+### 0.7.0 [#XX](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/XX)
+
+* Évolution du système socio-fiscal.
+  - Ajoute `nombre_de_parts`
+
 ### 0.6.1 [#15](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/15)
 
 * Amélioration technique.
