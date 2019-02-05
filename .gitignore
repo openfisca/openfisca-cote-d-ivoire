@@ -20,4 +20,3 @@ dist
 .DS_Store
 *~
 .pytest_cache/v/cache/nodeids
-.pytest_cache/v/cache/nodeids
