@@ -87,4 +87,3 @@ class auto_consommation(Variable):
     entity = Household
     definition_period = YEAR
     label = "Revenus estimés à partir des denrées consommées produites."
-
