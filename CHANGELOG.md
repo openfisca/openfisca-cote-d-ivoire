@@ -1,5 +1,21 @@
 # Changelog
 
+### 0.8.0 [#XX](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/XX)
+
+* Évolution du système socio-fiscal.
+    - Renomme salaire en salaire_brut_formel
+    - Ajoute revenus_activites_secondaires
+    - Ajoute pension
+    - Ajoute revenus_locatifs
+    - Ajoute interets_dividendes
+    - Ajoute bourses_transfers
+    - Ajoute aide_monetaire_autre_menage
+    - Ajoute aide_non_monetaire_autre_menage
+    - Ajoute autre_revenus_individuels
+    - Ajoute revenus_complementaires_elevage
+    - Ajoute revenus_complementaires_miel
+    - Ajoute auto_consommation
+
 ### 0.7.0 [#XX](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/XX)
 
 * Évolution du système socio-fiscal.
