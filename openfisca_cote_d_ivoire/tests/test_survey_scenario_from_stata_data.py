@@ -18,6 +18,8 @@ log = logging.getLogger(__file__)
 config_parser = configparser.SafeConfigParser()
 config_parser.read(os.path.join(config_files_directory, 'raw_data.ini'))
 data_is_available = config_parser.has_section("cote_d_ivoire")
+if not data_is_available:
+    log.info("No data available for Côte d'Ivoire")
 
 
 def get_data_file_path():
@@ -118,4 +120,7 @@ def test_survey_scenario(create_dataframes = True):
 
 
 if __name__ == '__main__':
+    import sys
+    logging.basicConfig(level = logging.DEBUG, stream = sys.stdout)
     test_survey_scenario()
+    # test_ceq_survey_scenario()
