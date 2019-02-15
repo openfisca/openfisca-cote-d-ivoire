@@ -1,8 +1,11 @@
 # Changelog
 
-## 0.8.0 [#XX](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/XX)
+## 0.8.0 [#24](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/24)
 
 * Évolution du système socio-fiscal.
+* Périodes concernées : toutes.
+* Zones impactées : `revenus`.
+* Détails:
   - Renomme salaire en salaire_brut_formel
   - Ajoute revenus_activites_secondaires
   - Ajoute pension
