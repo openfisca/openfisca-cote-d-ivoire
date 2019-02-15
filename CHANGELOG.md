@@ -6,7 +6,6 @@
 * Périodes concernées : toutes.
 * Zones impactées : `revenus`.
 * Détails:
-  - Renomme salaire en salaire_brut_formel
   - Ajoute revenus_activites_secondaires
   - Ajoute pension
   - Ajoute revenus_locatifs
