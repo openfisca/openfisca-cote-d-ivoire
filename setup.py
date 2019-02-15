@@ -28,7 +28,7 @@ setup(
             "scipy >= 0.17",  # Only used to test de_net_a_brut reform
             "requests >= 2.8",
             "openfisca-survey-manager[dev] >= 0.17.4",
-            "yamllint >=1.11.1,<1.15",
+            "yamllint >=1.11.1,<1.16",
             ],
         },
     packages=find_packages(),
