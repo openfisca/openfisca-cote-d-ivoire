@@ -10,8 +10,12 @@ from openfisca_survey_manager.utils import stata_files_to_data_frames
 from openfisca_cote_d_ivoire import CountryTaxBenefitSystem as CoteDIvoireTaxBenefitSystem
 
 
-class CoteDIvoireSurveyScenario(AbstractSurveyScenario):
-
+class CoteDIvoireSurveyScenario(AbstractSurveyScenario):    
+    weight_column_name_by_entity = dict(
+        household = 'household_weight',
+        person = 'person_weight',
+        )
+    
     def __init__(self, tax_benefit_system = None, baseline_tax_benefit_system = None,
             data = None, year = None):
         super(CoteDIvoireSurveyScenario, self).__init__()
