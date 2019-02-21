@@ -28,9 +28,9 @@ def get_data_file_path():
 
 def create_dataframes_from_stata_data():
     data_file_path = get_data_file_path()
-    import pprint
-    dico_labels = pd.read_stata(data_file_path, iterator=True)
-    pprint.pprint(dico_labels.variable_labels())
+    # import pprint
+    # dico_labels = pd.read_stata(data_file_path, iterator=True)
+    # pprint.pprint(dico_labels.variable_labels())
     dataframe = pd.read_stata(data_file_path)
     person_variables = [
         'age',
@@ -82,7 +82,7 @@ def create_dataframes_from_stata_data():
             household_weight = household_weight.values,
             )
         )
-        
+
     return person_dataframe, household_dataframe
 
 
