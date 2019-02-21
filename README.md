@@ -1,18 +1,18 @@
 # OpenFisca COTE_D_IVOIRE
 
 
-The country whose law is modelled here has a very simple tax and benefit system.
+This package models direct and indirect tax of Cote d'Ivoire's fiscal law. It (will) also include modules allowing for a simulation of the impact of public spending on Cote d'Ivoire's income/consumption distribution. 
 
-- It has a flat rate tax whose rates increase every year.
-- On the first of December, 2015, it introduced a basic income for all its citizens of age who have no income.
-- On the first of December, 2016, it removed the income condition, providing all its adult citizens with a basic income.
+This objective is to understand how current fiscal policies and public spendings affect the distribution of market income/consumption. 
+
+## Organisation of the folders
 
 These elements are described in different folders. All the modelling happens within the `openfisca_cote_d_ivoire` folder.
 
 - The rates are in the `parameters` folder.
 - The formulas are in the `variables` folder.
+_ Numbers from official sources are in `assets`folder. 
 - This country package comes also with *reforms* in the `reforms` folder. This is optional: your country may exist without defining any reform.
-    - In this country, there is [a reform project](./openfisca_cote_d_ivoire/reforms/modify_social_security_taxation.py) aiming to modify the social security taxation, deleting the first bracket, raising the intermediary ones and adding a new bracket with a higher tax rate of `40 %` for people earning more than `40000`. This reform project would apply starting from `2017-01-01`.
 
 The files that are outside from the `openfisca_cote_d_ivoire` folder are used to set up the development environment.
 
