@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.9.0 [#XX](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/XX)
+## 0.9.0 [#27](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/27)
 
 * Évolution du système socio-fiscal.
 * Périodes concernées : toutes.
