@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.9.0 [#27](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/27)
+
+* Évolution du système socio-fiscal.
+* Périodes concernées : toutes.
+* Zones impactées : `weights`.
+* Détails:
+  - Ajoute household_weights
+  - Ajoute person_weights
+  - Ajoute test avec chargement du framework CEQ
+
 ## 0.8.0 [#24](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/24)
 
 * Évolution du système socio-fiscal.
