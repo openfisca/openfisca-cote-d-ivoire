@@ -14,7 +14,7 @@ from openfisca_core import periods
 log = logging.getLogger(__file__)
 
 
-config_parser = configparser.SafeConfigParser()
+config_parser = configparser.ConfigParser()
 config_parser.read(os.path.join(config_files_directory, 'raw_data.ini'))
 data_is_available = config_parser.has_section("cote_d_ivoire")
 if not data_is_available:
