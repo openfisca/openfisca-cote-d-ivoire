@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.9.1 [#XX](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/XX)
+## 0.9.1 [#29](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/29)
 
 * Amélioration technique.
   - Utilise ConfigParser au lieu de SafeConfigParser (fix #20)
