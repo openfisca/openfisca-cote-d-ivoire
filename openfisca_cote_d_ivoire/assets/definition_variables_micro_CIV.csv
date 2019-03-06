@@ -1,0 +1,8 @@
+﻿nom_source,annee,nom_variable,unite_statistique,label_description,type,time_span,type_impot_OU_depense,before_after_tax,question_dans_enquete,nom_dofile,commentaire_mode_de_calcul_ET_qualite
+enquete de niveau de vie des menages,2015,sex,ind,genre,socio_demo,NA,NA,NA,??,??,??
+enquete de niveau de vie des menages,2015,link_to_head,ind,lien familial avec le chef de menage,socio_demo,NA,impot general sur le revenu,NA,??,??,??
+enquete de niveau de vie des menages,2015,hhid,hh,identifant menage,identifiant,NA,NA,NA,??,??,??
+enquete de niveau de vie des menages,2015,id,ind,identifant individuel,identifiant,NA,NA,NA,??,??,??
+enquete de niveau de vie des menages,2015,pond,ind,poids individuel - originaux,poids,NA,NA,NA,??,??,??
+enquete de niveau de vie des menages,2015,milieu,hh,dummy rural OU urbain,socio_demo,NA,NA,NA,??,??,??
+enquete de niveau de vie des menages,2015,inc_act1_ind,ind,revenu tire de l'activite principale,revenu,annualise,impot general sur le revenu ET contributional nationale,probablement apres les impots retenus a la source mais avant l'impot general sur le revenu,??,??,trimmed for outliers - la periode de reference choisie pour la declaration (jour. semaine. mois. annee) est correlee avec le montant annualise
