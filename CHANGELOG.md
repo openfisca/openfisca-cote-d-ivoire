@@ -1,6 +1,11 @@
 # Changelog
 
-## 0.9.1 [#29](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/29)
+### 0.9.2 [#39](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/39)
+
+* Amélioration technique.
+  - Adapte aux nouvelles version de openfisca-core (34.20) et openfisca-survey-manager (0.20)
+
+### 0.9.1 [#29](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/29)
 
 * Amélioration technique.
   - Utilise ConfigParser au lieu de SafeConfigParser (fix #20)

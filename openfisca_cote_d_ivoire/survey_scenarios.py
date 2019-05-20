@@ -55,7 +55,7 @@ class CoteDIvoireSurveyScenario(AbstractSurveyScenario):
             person_data_frame = input_data_frame_by_entity['person']
             person_data_frame['household_id'] = person_data_frame.id
             person_data_frame['person_id'] = person_data_frame.id
-            person_data_frame['household_legacy_role'] = 0
+            person_data_frame['household_role_index'] = 0
             data["input_data_frame_by_entity_by_period"][period] = dict(person = person_data_frame)
 
         self.init_from_data(data = data)

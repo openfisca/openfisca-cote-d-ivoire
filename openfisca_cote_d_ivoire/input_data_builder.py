@@ -47,7 +47,7 @@ def create_dataframes_from_stata_data():
     person_dataframe['salaire'] = person_dataframe.inc_act1_ind * (
         (person_dataframe.formel_informel == 1) | (person_dataframe.formel_informel == 1)
         )
-    person_dataframe['household_legacy_role'] = (
+    person_dataframe['household_role_index'] = (
         0 * (person_dataframe.link_to_head == 'chef de menage')
         + 1 * (person_dataframe.link_to_head == 'epouse ou mari')
         + 2 * (
