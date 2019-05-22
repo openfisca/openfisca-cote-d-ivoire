@@ -11,7 +11,7 @@ from openfisca_cote_d_ivoire import CountryTaxBenefitSystem as CoteDIvoireTaxBen
 
 
 class CoteDIvoireSurveyScenario(AbstractSurveyScenario):
-    weight_column_name_by_entity = dict(
+    weight_variable_by_entity = dict(
         household = 'household_weight',
         person = 'person_weight',
         )

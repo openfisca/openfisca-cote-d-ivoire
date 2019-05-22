@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='OpenFisca-COTE_D_IVOIRE',
-    version='0.9.2',
+    version='0.9.3',
     author='OpenFisca Team',
     author_email='contact@openfisca.fr',
     description=u'OpenFisca tax and benefit system for COTE_D_IVOIRE',
@@ -27,12 +27,12 @@ setup(
             "pytest <5.0",
             "scipy >=0.17",  # Only used to test de_net_a_brut reform
             "requests >=2.8",
-            "openfisca-ceq",
-            "openfisca-survey-manager[dev] >=0.2",
+            "openfisca-ceq >=0.2.5",
+            "openfisca-survey-manager[dev] >=0.23",
             "yamllint >=1.11.1,<1.16",
             ],
         'ceq': [
-            "openfisca-ceq >=0.2.4",
+            "openfisca-ceq >=0.2.5",
             ],
         },
     packages=find_packages(),
