@@ -23,12 +23,12 @@ def test_survey_scenario(create_dataframes = True):
         data = data,
         year = year,
         )
-    df_by_entity = survey_scenario.create_data_frame_by_entity(
-        variables = ['age', 'salaire', 'impot_general_revenu', 'impots_directs']
-        )
+    df_by_entity = survey_scenario.create_data_frame_by_entity(variables = ['age', 'salaire', 'impot_general_revenu', 'impots_directs'])
 
     for entity, df in df_by_entity.items():
+
         log.debug(entity)
+        assert not df.empty, "{} dataframe is empty".format(entity)
         log.debug(df)
 
 
