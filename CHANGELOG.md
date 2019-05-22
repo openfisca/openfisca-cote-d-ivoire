@@ -1,6 +1,6 @@
 # Changelog
 
-### 0.9.3 [#XX](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/XX)
+### 0.9.3 [#XXX](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/XXX)
 
 * Amélioration technique.
   - Adapte aux nouvelles version de openfisca-survey-manager (0.23)
