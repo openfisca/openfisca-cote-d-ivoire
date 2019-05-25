@@ -59,9 +59,10 @@ def test_aggregates():
     recette_by_variable = read_aggregates()
     survey_scenario = create_survey_sceanrio()
     period = 2017
-    for variable, recette in recette_by_variable.items():
-        print(survey_scenario.compute_aggregate(variable, period = period) / 1e9)
-        print(recette)
+    if survey_scenario is not None:
+        for variable, recette in recette_by_variable.items():
+            print(survey_scenario.compute_aggregate(variable, period = period) / 1e9)
+            print(recette)
 
 
 if __name__ == '__main__':
