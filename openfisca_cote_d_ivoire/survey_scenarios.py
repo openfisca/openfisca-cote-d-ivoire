@@ -35,6 +35,8 @@ class CoteDIvoireSurveyScenario(AbstractSurveyScenario):
         if 'input_data_frame_by_entity_by_period' in data:
             period = periods.period(year)
             dataframe_variables = set()
+            assert period in data['input_data_frame_by_entity_by_period'], "Period {} is not found in the data. Period(s) available(s) are {}".format(
+                period, [str(key) for key in data['input_data_frame_by_entity_by_period'].keys()])
             for entity_dataframe in data['input_data_frame_by_entity_by_period'][period].values():
                 if not isinstance(entity_dataframe, pd.DataFrame):
                     continue

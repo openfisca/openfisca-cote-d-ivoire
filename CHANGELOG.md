@@ -1,5 +1,12 @@
 # Changelog
 
+### 0.9.5 [#43](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/43)
+
+* Changement mineur.
+* Détails :
+  - Vérifie la validité des périodes des données d'entrée
+
+
 ### 0.9.4 [#41](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/41)
 
 * Amélioration technique.
