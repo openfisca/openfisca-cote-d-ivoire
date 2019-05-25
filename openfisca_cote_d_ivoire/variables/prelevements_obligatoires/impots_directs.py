@@ -28,10 +28,7 @@ class impot_general_revenu(Variable):
         abattement = parameters(period).taxes.impot_revenu.abattement
         bareme = parameters(period).taxes.impot_revenu.bareme
 
-        impot_general_revenu = bareme.calc(
-            salaire
-            * abattement
-            / nombre_de_parts
+        impot_general_revenu = nombre_de_parts * bareme.calc(
+            salaire * abattement / nombre_de_parts
             )
-        impot_general_revenu=impot_general_revenu*nombre_de_parts
         return impot_general_revenu
