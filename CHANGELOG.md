@@ -1,5 +1,12 @@
 # Changelog
 
+### 0.9.6 [#44](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/44)
+
+* Amélioration technique.
+* Détails :
+  - Amélioration de la création des bases d'entrée
+  - Création d'embryon de test d'agrégats
+
 ### 0.9.5 [#43](https://github.com/openfisca/openfisca-cote-d-ivoire/pull/43)
 
 * Changement mineur.
