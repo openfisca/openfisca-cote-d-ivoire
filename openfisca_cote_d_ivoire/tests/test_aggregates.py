@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
 
+import logging
 import os
 import pkg_resources
+
+
+import pandas as pd
 from slugify import slugify
-
-
-import logging
 
 
 from openfisca_ceq.tools import add_ceq_framework
@@ -36,7 +37,6 @@ def read_aggregates():
     package_path = pkg_resources.get_distribution("openfisca-cote-d-ivoire").location
     asset_path = os.path.join(package_path, "openfisca_cote_d_ivoire", 'assets')
     file_path = os.path.join(asset_path, 'recettes_fiscales_CIV.csv')
-    import pandas as pd
     recettes = pd.read_csv(file_path)
 
     recettes.columns = [slugify(column, separator = "_") for column in recettes.columns]
@@ -48,11 +48,7 @@ def read_aggregates():
         (variable, recettes.loc[recettes.description_3 == description_3, "montant_en_milliard_de_fcfa"].values[0])
         for variable, description_3 in description_3_by_variable.items()
         )
-    print(recette_by_variable)
     return recette_by_variable
-    # for variable, description_3 in description_3_by_variable.items():
-    #     print(variable, description_3)
-    #     print(recettes.loc[recettes.description_3 == description_3])
 
 
 def test_aggregates():
@@ -61,8 +57,8 @@ def test_aggregates():
     period = 2017
     if survey_scenario is not None:
         for variable, recette in recette_by_variable.items():
-            print(survey_scenario.compute_aggregate(variable, period = period) / 1e9)
-            print(recette)
+            logging.info(survey_scenario.compute_aggregate(variable, period = period) / 1e9)
+            logging.info(recette)
 
 
 if __name__ == '__main__':
