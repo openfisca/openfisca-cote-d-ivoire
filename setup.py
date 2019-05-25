@@ -17,7 +17,7 @@ setup(
     include_package_data = True,  # Will read MANIFEST.in
     install_requires=[
         'OpenFisca-Core >=34.2.2,<35.0',
-        'python-slugify >=3.02',
+        'python-slugify >=3.0.2',
         ],
     extras_require = {
         'dev': [
