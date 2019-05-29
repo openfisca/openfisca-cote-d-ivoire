@@ -40,7 +40,7 @@ class residence_principale_taxee(Variable):
 
 
 class nombre_enfants_a_charge(Variable):
-    value_type = int
+    value_type = float
     entity = Household
     definition_period = YEAR
     label = "Nombre d'enfants de la personne de référence et de son/sa conjointe dans le ménage"
