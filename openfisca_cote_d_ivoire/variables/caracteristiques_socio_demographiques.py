@@ -62,7 +62,7 @@ class marie(Variable):
 
 
 class nombre_de_parts(Variable):
-    value_type = int
+    value_type = float
     default_value = 1
     entity = Household
     definition_period = YEAR
@@ -74,8 +74,7 @@ class nombre_de_parts(Variable):
         veuf_ve = household('veuf_ve', period)
         condition_pas_enfant = nombre_enfants_a_charge == 0
         condition_marie_ou_veuf_ve = marie + veuf_ve
-        nombre_de_parts = 1
-        return select(
+        nombre_de_parts = select(
             [
                 (not_(marie) + veuf_ve) * condition_pas_enfant,
                 marie * condition_pas_enfant,
@@ -84,9 +83,11 @@ class nombre_de_parts(Variable):
                 ],
 
             [
-                min(nombre_de_parts, 5),
-                min(nombre_de_parts + 1, 5),
-                min(nombre_de_parts + 1 + (nombre_enfants_a_charge / 2), 5),
-                min(nombre_de_parts + 0.5 + (nombre_enfants_a_charge / 2), 5)
+                min_(1, 5),
+                min_(1 + 1, 5),
+                min_(1 + 1 + (nombre_enfants_a_charge / 2), 5),
+                min_(1 + 0.5 + (nombre_enfants_a_charge / 2), 5)
                 ],
             )
+
+        return nombre_de_parts
