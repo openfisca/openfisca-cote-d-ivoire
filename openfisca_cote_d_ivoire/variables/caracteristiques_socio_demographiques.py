@@ -84,9 +84,9 @@ class nombre_de_parts(Variable):
                 ],
 
             [
-                nombre_de_parts,
-                nombre_de_parts + 1,
-                nombre_de_parts + 1 + (nombre_enfants_a_charge / 2),
-                nombre_de_parts + 0.5 + (nombre_enfants_a_charge / 2)
+                min(nombre_de_parts, 5),
+                min(nombre_de_parts + 1, 5),
+                min(nombre_de_parts + 1 + (nombre_enfants_a_charge / 2), 5),
+                min(nombre_de_parts + 0.5 + (nombre_enfants_a_charge / 2), 5)
                 ],
             )
