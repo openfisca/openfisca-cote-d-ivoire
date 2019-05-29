@@ -1,0 +1,28 @@
+# Test files describe situations and their expected outcomes
+# We can run this test on our command line using
+#   `openfisca test --country-package  openfisca_cote_d_ivoire nombre_de_part1.yaml`
+
+
+- name: Nombre de parts Marie
+  period: 2016
+  input:
+    nombre_enfants_a_charge : [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    marie : [True, True, True, True, True, True, True, True, True]
+  output:
+    nombre_de_parts: [2, 2.5, 3, 3.5, 4, 4.5, 5, 5, 5]
+
+- name: Nombre de parts celibataire
+  period: 2016
+  input:
+    nombre_enfants_a_charge : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    marie : [False, False, False, False, False, False, False, False, False, False]
+  output:
+    nombre_de_parts: [1, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5, 5]
+
+- name: Nombre de parts Veuf
+  period: 2016
+  input:
+    nombre_enfants_a_charge : [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    veuf_ve : [True, True, True, True, True, True, True, True, True]
+  output:
+    nombre_de_parts: [1, 2.5, 3, 3.5, 4, 4.5, 5, 5, 5]
