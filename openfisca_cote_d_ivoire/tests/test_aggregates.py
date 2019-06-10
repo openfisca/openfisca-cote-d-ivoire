@@ -36,7 +36,7 @@ def create_survey_sceanrio():
 def read_aggregates():
     package_path = pkg_resources.get_distribution("openfisca-cote-d-ivoire").location
     asset_path = os.path.join(package_path, "openfisca_cote_d_ivoire", 'assets')
-    file_path = os.path.join(asset_path, 'recettes_fiscales_CIV.csv')
+    file_path = os.path.join(asset_path, 'donnees_de_calage_CIV.csv')
     recettes = pd.read_csv(file_path)
 
     recettes.columns = [slugify(column, separator = "_") for column in recettes.columns]
