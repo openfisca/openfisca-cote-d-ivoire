@@ -16,7 +16,7 @@ setup(
     url='https://github.com/openfisca/openfisca-cote-d-ivoire',
     include_package_data = True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >=34.2.2,<35.0',
+        'OpenFisca-Core >=34.2.6,<35.0',
         'python-slugify >=3.0.2',
         ],
     extras_require = {
@@ -29,7 +29,7 @@ setup(
             "scipy >=0.17",  # Only used to test de_net_a_brut reform
             "requests >=2.8",
             "openfisca-ceq >=0.2.5",
-            "openfisca-survey-manager[dev] >=0.24",
+            "openfisca-survey-manager[dev] >=0.28.0",
             "yamllint >=1.11.1,<1.17",
             ],
         'ceq': [
