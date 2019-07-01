@@ -1,17 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import logging
-import os
-
-import pandas as pd
-import matplotlib
-import matplotlib.pyplot as plt
-
-from test_aggregates import recettes
 
 
 from openfisca_cote_d_ivoire.input_data_builder import (
-    data_is_available,
+    # data_is_available,
     create_data_from_stata,
     )
 
@@ -35,7 +28,7 @@ for entity, df in df_by_entity.items():
     print(df)
 
 
-df['weighted_impot']=df.person_weight*df.impot_general_revenu
-df['average_impot_rate']=df.impot_general_revenu*100/df.salaire
+df['weighted_impot'] = df.person_weight * df.impot_general_revenu
+df['average_impot_rate'] = df.impot_general_revenu * 100 / df.salaire
 df.weighted_impot.sum()
-df.average_impot_rate.mean(skipna=True,)
+df.average_impot_rate.mean(skipna = True)
