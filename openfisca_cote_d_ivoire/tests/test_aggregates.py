@@ -49,7 +49,6 @@ def read_aggregates():
         "hommes": "hommes",
         }
 
-
     recette_by_variable = dict(
         (variable, recettes.loc[recettes.description_3 == description_3, "montant_en_milliard_de_fcfa"].values[0])
         for variable, description_3 in description_3_by_variable.items()
