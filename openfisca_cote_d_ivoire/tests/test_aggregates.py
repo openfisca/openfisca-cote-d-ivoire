@@ -42,8 +42,13 @@ def read_aggregates():
     recettes.columns = [slugify(column, separator = "_") for column in recettes.columns]
     print(recettes.columns)
     description_3_by_variable = {
-        "impot_general_revenu": "Impot sur les revenu et salaires"
+        "impot_general_revenu": "Impot sur les revenu et salaires",
+        "pop_15_et_plus": "pop_15_et_plus",
+        "pop_totale": "pop_totale",
+        "femmes": "femmes",
+        "hommes": "hommes",
         }
+
 
     recette_by_variable = dict(
         (variable, recettes.loc[recettes.description_3 == description_3, "montant_en_milliard_de_fcfa"].values[0])
@@ -58,9 +63,12 @@ def test_aggregates():
     period = 2017
     if survey_scenario is not None:
         for variable, recette in recette_by_variable.items():
-            logging.info(survey_scenario.compute_aggregate(variable, period = period) / 1e9)
+            if variable in survey_scenario.tax_benefit_system.variables:
+                logging.info("Computed value for variable {}:".format(variable))
+                logging.info(survey_scenario.compute_aggregate(variable, period = period) / 1e9)
+            logging.info("Tablutaed value for variable {}:".format(variable))
             logging.info(recette)
-
+            logging.info("")
 
 if __name__ == '__main__':
     import sys
