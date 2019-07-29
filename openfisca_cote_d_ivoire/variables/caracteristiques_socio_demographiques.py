@@ -99,3 +99,9 @@ class sexe(Variable):
     definition_period = ETERNITY
     label = "Sexe"
 
+
+class formel_informel(Variable):
+    value_type = int
+    entity = Person
+    definition_period = ETERNITY
+    label = "formel_informel"

@@ -36,7 +36,6 @@ CIV;2015;34;revenus;formel;somme_salaires_fonctionnaires;;612;;;Fiscal Data
 CIV;2015;35;revenus;formel;somme_salaires_prive;;803;;;Fiscal Data
 CIV;2015;36;recette_fiscales;formel;somme_impot_salaires_fonctionnaires;;62.18675402;;;Fiscal Data
 CIV;2015;37;recette_fiscales;formel;somme_impot_salaires_prive;;154;;;Fiscal Data
-CIV;2015;38;population;total;pop_15_et_plus;;7663648;;;World Bank Data - 06/2019
 CIV;2015;39;population;total;pop_totale;;23108472;;;World Bank Data - 06/2019
 CIV;2015;40;population;total;femmes;;11379956;;;World Bank Data - 06/2019
 CIV;2015;41;population;total;hommes;;11728516;;;World Bank Data - 06/2019

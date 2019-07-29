@@ -1,0 +1,44 @@
+description: Bareme de Impot General sur le revenu
+brackets:
+- rate:
+    1950-01-01:
+      value: 0.0
+  threshold:
+    1950-01-01:
+      value: 0.0
+- rate:
+    1950-01-01:
+      value: 0.15
+  threshold:
+    1950-01-01:
+      value: 525000
+- rate:
+    1950-01-01:
+      value: 0.20
+  threshold:
+    1950-01-01:
+      value: 900000
+- rate:
+    1950-01-01:
+      value: 0.25
+  threshold:
+    1950-01-01:
+      value: 1350000
+- rate:
+    1950-01-01:
+      value: 0.35
+  threshold:
+    1950-01-01:
+      value: 2250000
+- rate:
+    1950-01-01:
+      value: 0.45
+  threshold:
+    1950-01-01:
+      value: 3750000
+- rate:
+    1950-01-01:
+      value: 0.60
+  threshold:
+    1950-01-01:
+      value: 7500000
