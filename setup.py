@@ -28,12 +28,12 @@ setup(
             "pytest <6.0",
             "scipy >=0.17",  # Only used to test de_net_a_brut reform
             "requests >=2.8",
-            "openfisca-ceq >=0.2.5",
-            "openfisca-survey-manager[dev] >=0.28.0",
+            "openfisca-ceq >=0.2.6",
+            "openfisca-survey-manager[dev] >=0.34.0, <1.0",
             "yamllint >=1.11.1,<1.18",
             ],
         'ceq': [
-            "openfisca-ceq >=0.2.5",
+            "openfisca-ceq >=0.2.6",
             ],
         },
     packages=find_packages(),
