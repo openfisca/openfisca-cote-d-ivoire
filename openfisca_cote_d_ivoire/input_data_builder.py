@@ -31,6 +31,7 @@ def create_dataframes_from_stata_data():
     # import pprint
     # dico_labels = pd.read_stata(data_file_path, iterator=True)
     # pprint.pprint(dico_labels.variable_labels())
+
     dataframe = pd.read_stata(data_file_path)
     person_variables = [
         'age',
@@ -48,7 +49,7 @@ def create_dataframes_from_stata_data():
     person_dataframe['salaire'] = person_dataframe.inc_act1_ind * (
         (person_dataframe.formel_informel == 1) | (person_dataframe.formel_informel == 2)
         )
-    person_dataframe['pension'] = person_dataframe.inc_pension_ind
+    person_dataframe['pension_retraite'] = person_dataframe.inc_pension_ind
     person_dataframe['household_role_index'] = (
         0 * (person_dataframe.link_to_head == 'chef de menage')
         + 1 * (person_dataframe.link_to_head == 'epouse ou mari')
@@ -70,7 +71,7 @@ def create_dataframes_from_stata_data():
     person_dataframe['household_id'] = person_dataframe['hhid'].map(household_id_by_hhid)
     person_dataframe['person_id'] = range(len(person_dataframe))
     person_dataframe = person_dataframe.rename(columns = {
-        'inc_pension_ind': 'pension',
+        'inc_pension_ind': 'pension_retraite',
         'sex': 'sexe',
         'pond': 'person_weight',
         })
