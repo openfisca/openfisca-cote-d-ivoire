@@ -4,7 +4,7 @@ import logging
 
 
 from openfisca_cote_d_ivoire.input_data_builder import (
-    # data_is_available,
+    data_is_available,
     create_data_from_stata,
     )
 
@@ -13,6 +13,8 @@ from openfisca_cote_d_ivoire.survey_scenarios import CoteDIvoireSurveyScenario
 
 
 def test_analyse_primaire():
+    if not data_is_available:
+        return
     year = 2017
     data = create_data_from_stata(create_dataframes = True)
     survey_scenario = CoteDIvoireSurveyScenario(
