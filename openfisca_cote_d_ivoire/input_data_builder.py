@@ -32,32 +32,57 @@ def create_dataframes_from_stata_data():
     # dico_labels = pd.read_stata(data_file_path, iterator=True)
     # pprint.pprint(dico_labels.variable_labels())
 
-    dataframe = pd.read_stata(data_file_path)
-    person_variables = [
-        'age',
-        'formel_informel',
-        'hhid',
-        'id',
-        'inc_act1_ind',
-        'inc_pension_ind',
-        'link_to_head',
-        'pond',
-        'sex',
-        'weight',
-        ]
-    person_dataframe = dataframe[person_variables].copy()
-    person_dataframe['salaire'] = person_dataframe.inc_act1_ind * (
-        (person_dataframe.formel_informel == 1) | (person_dataframe.formel_informel == 2)
+    from openfisca_ceq.tools.data_ceq_correspondence import (
+        ceq_input_by_person_variable,
+        ceq_intermediate_by_person_variable,
+        non_ceq_input_by_person_variable,
         )
-    person_dataframe['pension_retraite'] = person_dataframe.inc_pension_ind
-    person_dataframe['household_role_index'] = (
-        0 * (person_dataframe.link_to_head == 'chef de menage')
-        + 1 * (person_dataframe.link_to_head == 'epouse ou mari')
-        + 2 * (
-            (person_dataframe.link_to_head != 'chef de menage') & (person_dataframe.link_to_head != 'epouse ou mari')
-            )
+    renamings = [
+        ceq_input_by_person_variable,
+        ceq_intermediate_by_person_variable,
+        non_ceq_input_by_person_variable,
+        ]
+    revenues_variable = sum(
+        [list(variables.keys()) for variables in renamings],
+        []
         )
 
+    dataframe = pd.read_stata(data_file_path)
+    assert set(revenues_variable).issubset(set(dataframe.columns)), \
+        "Some mandatory revenue variables are not present: ".fromat(
+            set(revenues_variable).difference(set(dataframe.columns))
+            )
+    person_variables = revenues_variable + [
+        # 'age',
+        'hhid',
+        'pid',
+        'pond',
+        # 'sex'
+        'weight',
+        ]
+    renamed_columns = dict(
+        renaming
+        for partial_renamings in renamings
+        for renaming in partial_renamings.items()
+        )  # merging dictionnaries
+    person_dataframe = (dataframe[person_variables]
+        .copy()
+        .rename(columns = renamed_columns)
+        )
+    # person_dataframe['household_role_index'] = (
+    #     0 * (person_dataframe.link_to_head == 'chef de menage')
+    #     + 1 * (person_dataframe.link_to_head == 'epouse ou mari')
+    #     + 2 * (
+    #         (person_dataframe.link_to_head != 'chef de menage') & (person_dataframe.link_to_head != 'epouse ou mari')
+    #         )
+    #     )
+    person_dataframe['household_role_index'] = (
+        person_dataframe.groupby("hhid")['pid'].rank() - 1
+        ).astype(int)
+    person_dataframe['household_role_index'] = person_dataframe['household_role_index'].where(
+        person_dataframe['household_role_index'] < 2,
+        2,
+        )
     household_id_by_hhid = (person_dataframe.hhid
         .drop_duplicates()
         .sort_values()
@@ -67,12 +92,10 @@ def create_dataframes_from_stata_data():
         .set_index('hhid')
         .squeeze()
         )
-
     person_dataframe['household_id'] = person_dataframe['hhid'].map(household_id_by_hhid)
     person_dataframe['person_id'] = range(len(person_dataframe))
+
     person_dataframe = person_dataframe.rename(columns = {
-        'inc_pension_ind': 'pension_retraite',
-        'sex': 'sexe',
         'pond': 'person_weight',
         })
     person_dataframe['sexe'] = person_dataframe.sexe.str.startswith('F')
@@ -85,6 +108,31 @@ def create_dataframes_from_stata_data():
             household_weight = household_weight.values,
             )
         )
+
+    from openfisca_cote_d_ivoire import CountryTaxBenefitSystem as CoteDIvoireTaxBenefitSystem
+    from openfisca_ceq.tools.tax_benefit_system_completion import add_ceq_framework
+    tax_benefit_system = CoteDIvoireTaxBenefitSystem()
+    ceq_enhanced_tax_benefit_system = add_ceq_framework(tax_benefit_system)
+    ceq_enhanced_tax_benefit_system
+
+    household_variables = [
+        variable_name
+        for variable_name, variable_instance in ceq_enhanced_tax_benefit_system.variables.items()
+        if variable_instance.entity.key == 'household'
+        ]
+
+    transferred_variables = list()
+    for variable in household_variables:
+        # TODO improve by better filtering and better filling NAs
+        if variable in ['household_weight']:
+            continue
+        if variable not in person_dataframe.columns:
+            continue
+        log.debug("Moving {} from person to household".format(variable))
+        household_dataframe[variable] = person_dataframe.groupby('household_id')[variable].fillna(0).sum()
+        transferred_variables.append(variable)
+
+    person_dataframe.drop(columns = transferred_variables, inplace = True)
 
     return person_dataframe, household_dataframe
 
