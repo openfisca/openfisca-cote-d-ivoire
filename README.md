@@ -1,160 +1,210 @@
-# OpenFisca COTE_D_IVOIRE
+[![Newsletter](https://img.shields.io/badge/newsletter-subscribe!-informational.svg?style=flat)](mailto:contact%40openfisca.org?subject=Subscribe%20to%20your%20newsletter%20%7C%20S'inscrire%20%C3%A0%20votre%20newsletter&body=%5BEnglish%20version%20below%5D%0A%0ABonjour%2C%0A%0AVotre%C2%A0pr%C3%A9sence%C2%A0ici%C2%A0nous%C2%A0ravit%C2%A0!%20%F0%9F%98%83%0A%0AEnvoyez-nous%20cet%20email%20pour%20que%20l'on%20puisse%20vous%20inscrire%20%C3%A0%20la%20newsletter.%20%0A%0AAh%C2%A0!%20Et%20si%20vous%20pouviez%20remplir%20ce%20petit%20questionnaire%2C%20%C3%A7a%20serait%20encore%20mieux%C2%A0!%0Ahttps%3A%2F%2Fgoo.gl%2Fforms%2F45M0VR1TYKD1RGzX2%0A%0AAmiti%C3%A9%2C%0AL%E2%80%99%C3%A9quipe%20OpenFisca%0A%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20ENGLISH%20VERSION%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%0AHi%2C%20%0A%0AWe're%20glad%20to%20see%20you%20here!%20%F0%9F%98%83%0A%0APlease%20send%20us%20this%20email%2C%20so%20we%20can%20subscribe%20you%20to%20the%20newsletter.%0A%0AAlso%2C%20if%20you%20can%20fill%20out%20this%20short%20survey%2C%20even%20better!%0Ahttps%3A%2F%2Fgoo.gl%2Fforms%2FsOg8K1abhhm441LG2%0A%0ACheers%2C%0AThe%20OpenFisca%20Team)
+[![Twitter](https://img.shields.io/badge/twitter-follow%20us!-9cf.svg?style=flat)](https://twitter.com/intent/follow?screen_name=openfisca)
+[![Slack](https://img.shields.io/badge/slack-join%20us!-blueviolet.svg?style=flat)](mailto:contact%40openfisca.org?subject=Join%20you%20on%20Slack%20%7C%20Nous%20rejoindre%20sur%20Slack&body=%5BEnglish%20version%20below%5D%0A%0ABonjour%2C%0A%0AVotre%C2%A0pr%C3%A9sence%C2%A0ici%C2%A0nous%C2%A0ravit%C2%A0!%20%F0%9F%98%83%0A%0ARacontez-nous%20un%20peu%20de%20vous%2C%20et%20du%20pourquoi%20de%20votre%20int%C3%A9r%C3%AAt%20de%20rejoindre%20la%20communaut%C3%A9%20OpenFisca%20sur%20Slack.%0A%0AAh%C2%A0!%20Et%20si%20vous%20pouviez%20remplir%20ce%20petit%20questionnaire%2C%20%C3%A7a%20serait%20encore%20mieux%C2%A0!%0Ahttps%3A%2F%2Fgoo.gl%2Fforms%2F45M0VR1TYKD1RGzX2%0A%0AN%E2%80%99oubliez%20pas%20de%20nous%20envoyer%20cet%20email%C2%A0!%20Sinon%2C%20on%20ne%20pourra%20pas%20vous%20contacter%20ni%20vous%20inviter%20sur%20Slack.%0A%0AAmiti%C3%A9%2C%0AL%E2%80%99%C3%A9quipe%20OpenFisca%0A%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20ENGLISH%20VERSION%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%0AHi%2C%20%0A%0AWe're%20glad%20to%20see%20you%20here!%20%F0%9F%98%83%0A%0APlease%20tell%20us%20a%20bit%20about%20you%20and%20why%20you%20want%20to%20join%20the%20OpenFisca%20community%20on%20Slack.%0A%0AAlso%2C%20if%20you%20can%20fill%20out%20this%20short%20survey%2C%20even%20better!%0Ahttps%3A%2F%2Fgoo.gl%2Fforms%2FsOg8K1abhhm441LG2.%0A%0ADon't%20forget%20to%20send%20us%20this%20email!%20Otherwise%20we%20won't%20be%20able%20to%20contact%20you%20back%2C%20nor%20invite%20you%20on%20Slack.%0A%0ACheers%2C%0AThe%20OpenFisca%20Team)
+[![CircleCI](https://img.shields.io/circleci/project/github/openfisca/openfisca-cote-d-ivoire/master.svg?style=flat)](https://circleci.com/gh/openfisca/openfisca-cote-d-ivoire)
+[![Python](https://img.shields.io/pypi/pyversions/openfisca-cote-d-ivoire.svg)](https://pypi.python.org/pypi/openfisca-cote-d-ivoire)
+[![PyPi](https://img.shields.io/pypi/v/openfisca-cote-d-ivoire.svg?style=flat)](https://pypi.python.org/pypi/openfisca-cote-d-ivoire)
 
+# OpenFisca-Côte d'Ivoire
 
-This package models direct and indirect tax of Cote d'Ivoire's fiscal law. It (will) also include modules allowing for a simulation of the impact of public spending on Cote d'Ivoire's income/consumption distribution. 
+## [EN] Introduction
 
-This objective is to understand how current fiscal policies and public spendings affect the distribution of market income/consumption. 
+This is the malian tax and benefit system for OpenFisca.
 
-## Organisation of the folders
+It is part of a [comparative study](https://github.com/openfisca/openfisca-ceq) of the Ivoirian, [Senegalese](https://github.com/openfisca/openfisca-senegal) and [Malian](https://github.com/openfisca/openfisca-mali) fiscal systems.
 
-These elements are described in different folders. All the modelling happens within the `openfisca_cote_d_ivoire` folder.
+OpenFisca is a versatile microsimulation free software. You can check the [general OpenFisca documentation](http://openfisca.org/doc/) in English!
 
-- The rates are in the `parameters` folder.
-- The formulas are in the `variables` folder.
-_ Numbers from official sources are in `assets`folder. 
-- This country package comes also with *reforms* in the `reforms` folder. This is optional: your country may exist without defining any reform.
+## [FR] Introduction
 
-The files that are outside from the `openfisca_cote_d_ivoire` folder are used to set up the development environment.
+[OpenFisca](https://www.openfisca.fr/) est un logiciel libre de micro-simulation. Ce dépôt contient la modélisation du système social et fiscal malien. Pour plus d'information sur les fonctionnalités et la manière d'utiliser OpenFisca, vous pouvez consulter la [documentation générale](https://openfisca.org/doc/).
 
-## Packaging your Country Package for Distribution
+Ce module est en cours de développment dans le cadre d'une [étude comparative](https://github.com/openfisca/openfisca-ceq) des modèles socio-fiscaux de la Côte d'Ivoire, du [Sénégal](https://github.com/openfisca/openfisca-senegal) et du [Mali](https://github.com/openfisca/openfisca-mali).
 
-Country packages are python distributions. To distribute your package via `pip`, follow the steps given by the [Python Packaging Authority](https://python-packaging-user-guide.readthedocs.io/tutorials/distributing-packages/#packaging-your-project).
+Pour plus d'information sur les fonctionnalités et la manière d'utiliser OpenFisca, vous pouvez consulter la [documentation générale (en anglais)](https://openfisca.org/doc/).
 
-## Install Instructions for Users and Contributors
+## Installation
 
-This package requires [Python 2.7.9](https://www.python.org/downloads/release/python-2715/) or a more recent 2.7 version.
+Ce paquet requiert [Python 3.7](https://www.python.org/downloads/release/python-370/) et [pip](https://pip.pypa.io/en/stable/installing/).
 
-All platforms that can execute Python are supported, which includes GNU/Linux, macOS and Microsoft Windows (in which case we recommend using [ConEmu](https://conemu.github.io/) instead of the default console).
+Plateformes supportées :
+- distributions GNU/Linux (en particulier Debian and Ubuntu) ;
+- Mac OS X ;
+- Windows (nous recommandons d'utiliser [ConEmu](https://conemu.github.io/) à la place de la console par défaut) ;
 
-### Setting-up a Virtual Environment with Pew
+Pour les autres OS : si vous pouvez exécuter Python et Numpy, l'installation d'OpenFisca devrait fonctionner.
 
-In order to limit dependencies conflicts, we recommend to use a [virtual environment](https://virtualenv.pypa.io/en/stable/) (abbreviated as “virtualenv”) with a virtualenv manager such as [pew](https://github.com/berdario/pew).
+### Installez un environnement virtuel avec Pew
 
-- A [virtualenv](https://virtualenv.pypa.io/en/stable/) is a project specific environment created to suit the needs of the project you are working on.
-- A virtualenv manager such as [pew](https://github.com/berdario/pew) lets you easily create, remove and toggle between several virtualenvs.
+Nous recommandons l'utilisation d'un [environnement virtuel](https://virtualenv.pypa.io/en/stable/) (_virtualenv_) avec un gestionnaire de _virtualenv_ tel que [Pew](https://github.com/berdario/pew).
 
-To install pew, launch a terminal on your computer and follow these instructions:
+- Un _[virtualenv](https://virtualenv.pypa.io/en/stable/)_ crée un environnement pour les besoins spécifiques du projet sur lequel vous travaillez.
+- Un gestionnaire de _virtualenv_, tel que [Pew](https://github.com/berdario/pew), vous permet de facilement créer, supprimer et naviguer entre différents projets.
+
+Pour installer Pew, lancez une fenêtre de terminal et suivez ces instructions :
+
+```sh
+python --version # Python 3.7.0 ou plus récent devrait être installé sur votre ordinateur.
+# Si non, téléchargez-le sur http://www.python.org et téléchargez pip.
+```
 
 ```sh
 pip install --upgrade pip
-pip install pew  # if asked, answer "Y" to the question about modifying your shell config file.
-pew new openfisca --python=python2.7  # create a new virtualenv called “openfisca”
+pip install pew
 ```
+Créez un nouveau _virtualenv_ nommé **openfisca** et configurez-le avec python 3.7 :
 
-The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt resembling this:
-
+```sh
+pew new openfisca --python=python3.7
+# Si demandé, répondez "Y" à la question sur la modification du fichier de configuration de votre shell
 ```
+Le  _virtualenv_  **openfisca** sera alors activé, c'est-à-dire que les commandes suivantes s'exécuteront directement dans l'environnement virtuel. Vous verrez dans votre terminal :
+
+```sh
 Installing setuptools, pip, wheel...done.
 Launching subshell in virtual environment. Type 'exit' or 'Ctrl+D' to return.
 ```
 
-You can re-activate that virtualenv at any time with `pew workon openfisca`.
+Informations complémentaires :
+- sortez du _virtualenv_ en tapant `exit` (or Ctrl-D) ;
+- re-rentrez en tapant `pew workon openfisca` dans votre terminal.
 
-:tada: You are now ready to install this OpenFisca Country Package!
+Bravo :tada: Vous êtes prêt·e à installer OpenFisca-Cote-d-Ivoire !
 
-Two install procedures are available. Pick procedure A or B below depending on how you plan to use this Country Package.
+Nous proposons deux procédures d'installation. Choisissez l'installation A ou B ci-dessous en fonction de l'usage que vous souhaitez faire d'OpenFisca-Cote-d-Ivoire.
 
-### A. Minimal Installation (Pip Install)
+### A. Installation minimale (pip install)
 
-Follow this installation if you wish to:
-- run calculations on a large population;
-- create tax & benefits simulations;
-- write an extension to this legislation (e.g. city specific tax & benefits);
-- serve your Country Package with the OpenFisca Web API.
+Suivez cette installation si vous souhaitez :
+- procéder à des calculs sur une large population ;
+- créer des simulations fiscales ;
 
-For more advanced uses, head to the [Advanced Installation](#advanced-installation-git-clone).
+Pour pouvoir modifier OpenFisca-Cote-d-Ivoire, consultez l'[Installation avancée](#b-installation-avancée-git-clone).
 
-#### Install this Country Package with Pip Install
+#### Installer OpenFisca-Cote-d-Ivoire avec pip install
 
-Inside your virtualenv, check the prerequisites:
+Dans votre _virtualenv_, vérifiez les pré-requis :
 
 ```sh
-python --version  # should print "Python 2.7.xx".
-#if not, make sure you pass the python version as an argument when creating your virtualenv
+python --version  # Devrait afficher "Python 3.7.xx".
+#Si non, vérifiez que vous passez --python=python3.7 lors de la création de votre environnement virtuel.
 ```
 
 ```sh
-pip --version  # should print at least 9.0.
-#if not, run "pip install --upgrade pip"
+pip --version  # Devrait afficher au moins 9.0.x
+#Si non, exécutez "pip install --upgrade pip".
 ```
-Install the Country Package:
+Installez OpenFisca-Cote-d-Ivoire :
 
 ```sh
-pip install openfisca_cote_d_ivoire
+pip install openfisca-cote-d-ivoire
 ```
 
-:tada: This OpenFisca Country Package is now installed and ready!
+Félicitations :tada: OpenFisca-Cote-d-Ivoire est prêt à être utilisé !
 
-#### Next Steps
+#### Prochaines étapes
 
-- To learn how to use OpenFisca, follow our [tutorials](https://openfisca.org/doc/).
-- To serve this Country Package, serve the [OpenFisca web API](#serve-your-country-package-with-the-openFisca-web-api).
+- Apprenez à utiliser OpenFisca avec nos [tutoriels](https://openfisca.org/doc/) (en anglais).
 
-Depending on what you want to do with OpenFisca, you may want to install yet other packages in your virtualenv:
-- To install extensions or write on top of this Country Package, head to the [Extensions documentation](https://openfisca.org/doc/contribute/extensions.html).
-- To plot simulation results, try [matplotlib](http://matplotlib.org/).
-- To manage data, check out [pandas](http://pandas.pydata.org/).
+En fonction de vos projets, vous pourriez bénéficier de l'installation des paquets suivants dans votre _virtualenv_ :
+- pour installer une extension ou écrire une législation au-dessus d'OpenFisca-Cote-d-Ivoire, consultez la [documentation sur les extensions](https://openfisca.org/doc/contribute/extensions.html) (en anglais) ;
+- pour représenter graphiquement vos résultats, essayez la bibliothèque [matplotlib](http://matplotlib.org/) ;
+- pour gérer vos données, découvrez la bibliothèque [pandas](http://pandas.pydata.org/).
 
-### B. Advanced Installation (Git Clone)
+### B. Installation avancée (Git Clone)
 
-Follow this tutorial if you wish to:
-- create or change this Country Package's legislation;
-- contribute to the source code.
+Suivez cette installation si vous souhaitez :
+- enrichir ou modifier la législation d'OpenFisca-Cote-d-Ivoire ;
+- contribuer au code source d'OpenFisca-Cote-d-Ivoire.
 
-#### Clone this Country Package with Git
+#### Cloner OpenFisca-Cote-d-Ivoire avec Git
 
-First of all, make sure [Git](https://www.git-scm.com/) is installed on your machine.
+Premièrement, assurez-vous que [Git](https://www.git-scm.com/) est bien installé sur votre machine.
 
-Set your working directory to the location where you want this OpenFisca Country Package cloned.
+Dans votre _virtualenv_, assurez-vous que vous êtes dans le répertoire où vous souhaitez cloner OpenFisca-Cote-d-Ivoire.
 
-Inside your virtualenv, check the prerequisites:
+Vérifiez les pré-requis :
 
 ```sh
-python --version  # should print "Python 2.7.xx".
-#if not, make sure you pass the python version as an argument when creating your virtualenv
+python --version  # Devrait afficher "Python 3.7.xx".
+#Si non, vérifiez que vous passez --python=python3.7 lors de la création de votre environnement virtuel.
 ```
 
 ```sh
-pip --version  # should print at least 9.0.
-#if not, run "pip install --upgrade pip"
+pip --version  # Devrait afficher au moins 9.0.
+#Si non, exécutez "pip install --upgrade pip".
 ```
-Clone this Country Package on your machine:
+
+Clonez OpenFisca-Cote-d-Ivoire sur votre machine :
 
 ```sh
-git clone https://github.com/openfisca/openfisca-cote_d_ivoire.git
-cd openfisca-cote_d_ivoire
-pip install --editable .[dev]
+git clone https://github.com/openfisca/openfisca-cote-d-ivoire.git
+cd openfisca-cote-d-ivoire
+pip install --editable .[dev] && pip install openfisca-core[web-api]
 ```
 
-You can make sure that everything is working by running the provided tests with `make test`.
-
-> [Learn more about tests](https://openfisca.org/doc/coding-the-legislation/writing_yaml_tests.html)
-
-:tada: This OpenFisca Country Package is now installed and ready!
-
-#### Next Steps
-
-- To write new legislation, read the [Coding the legislation](https://openfisca.org/doc/coding-the-legislation/index.html) section to know how to write legislation.
-- To contribute to the code, read our [Contribution Guidebook](https://openfisca.org/doc/contribute/index.html).
-
-## Serve this Country Package with the OpenFisca Web API
-
-If you are considering building a web application, you can use the packaged OpenFisca Web API with your Country Package.
-
-To serve the Openfisca Web API locally, run:
+Vous pouvez vous assurer que votre installation s'est bien passée en exécutant :
 
 ```sh
-openfisca serve --port 5000
+pytest tests/test_basics.py # Ces test peuvent prendre jusqu'à 60 secondes.
 ```
+:tada: OpenFisca-Cote-d-Ivoire est prêt à être utilisé !
 
-To read more about the `openfisca serve` command, check out its [documentation](https://openfisca.readthedocs.io/en/latest/openfisca_serve.html).
+#### Prochaines étapes
 
-You can make sure that your instance of the API is working by requesting:
+- Pour enrichir ou faire évoluer la législation d'OpenFisca-Cote-d-Ivoire, lisez _[Coding the Legislation](https://openfisca.org/doc/coding-the-legislation/index.html)_ (en anglais).
+- Pour contribuer au code, lisez le _[Contribution Guidebook](https://openfisca.org/doc/contribute/index.html)_ (en anglais).
+
+## Testing
+
+Pour faire tourner les tests d'OpenFisca-Cote-d-Ivoire, exécutez la commande suivante :
 
 ```sh
-curl "http://localhost:5000/spec"
+make test
 ```
 
-This endpoint returns the [Open API specification](https://www.openapis.org/) of your API.
+## Style
 
-:tada: This OpenFisca Country Package is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](https://openfisca.org/doc/openfisca-web-api/index.html)
+Ce dépôt adhère à un style de code précis, et on vous invite à le suivre pour que vos contributions soient intégrées au plus vite.
+
+L'analyse de style est déjà exécutée avec `make test`. Pour le faire tourner de façon indépendante :
+
+```sh
+make check-style
+```
+
+Pour corriger les erreurs de style de façon automatique:
+
+```sh
+make format-style
+```
+
+Pour corriger les erreurs de style de façon automatique à chaque fois que vous faites un _commit_ :
+
+```sh
+touch .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+
+tee -a .git/hooks/pre-commit << END
+#!/bin/sh
+#
+# Automatically format your code before committing.
+exec make format-style
+END
+```
+
+## Stratégie de versionnement
+
+Le code d'OpenFisca-Cote-d-Ivoire est déployé de manière continue et automatique. Ainsi, à chaque fois que le code de la législation évolue sur la branche principale `master`, une nouvelle version est publiée.
+
+De nouvelles versions sont donc publiées très régulièrement. Cependant, la différence entre deux versions consécutives étant réduite, les efforts d'adaptation pour passer de l'une à l'autre sont en général très limités.
+
+Par ailleurs, OpenFisca-Cote-d-Ivoire respecte les règles du [versionnement sémantique](http://semver.org/). Tous les changements qui ne font pas l'objet d'une augmentation du numéro majeur de version sont donc garantis rétro-compatibles.
+
+> Par exemple, si mon application utilise la version `13.1.1`, je sais qu'elle fonctionnera également avec la version `13.2.0`. En revanche, il est possible qu'une adaptation soit nécessaire sur mon client pour pouvoir utiliser la version `14.0.0`.
+
+Enfin, les impacts et périmètres des évolutions sont tous documentés sur le [CHANGELOG](CHANGELOG.md) du package. Ce document permet aux contributeurs de suivre les évolutions et d'établir leur propre stratégie de mise à jour.
+
+## Contributeurs
+
+Voir la [liste des contributeurs](https://github.com/openfisca/openfisca-cote-d-ivoire/graphs/contributors).

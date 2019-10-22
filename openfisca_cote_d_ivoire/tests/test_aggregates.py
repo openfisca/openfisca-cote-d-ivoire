@@ -36,12 +36,19 @@ def create_survey_sceanrio():
 def read_aggregates():
     package_path = pkg_resources.get_distribution("openfisca-cote-d-ivoire").location
     asset_path = os.path.join(package_path, "openfisca_cote_d_ivoire", 'assets')
-    file_path = os.path.join(asset_path, 'recettes_fiscales_CIV.csv')
-    recettes = pd.read_csv(file_path)
+    file_path = os.path.join(asset_path, 'donnees_de_calage_CIV.csv')
+    recettes = pd.read_csv(file_path, sep = ";")
 
     recettes.columns = [slugify(column, separator = "_") for column in recettes.columns]
     description_3_by_variable = {
-        "impot_general_revenu": "Impot sur les revenu et salaires"
+        "impot_general_revenu": "Impot sur les revenu et salaires",
+        "pop_totale": "pop_totale",
+        "femmes": "femmes",
+        "hommes": "hommes",
+        "nombre_fonctionnaires_actifs": "nombre_fonctionnaires_actifs",
+        "nombre_prive_actifs": "nombre_prive_actifs",
+        "somme_salaires_fonctionnaires": "somme_salaires_fonctionnaires",
+        "somme_salaires_prive": "somme_salaires_prive",
         }
 
     recette_by_variable = dict(
@@ -55,10 +62,66 @@ def test_aggregates():
     recette_by_variable = read_aggregates()
     survey_scenario = create_survey_sceanrio()
     period = 2017
+    unit = 1.0
     if survey_scenario is not None:
         for variable, recette in recette_by_variable.items():
-            logging.info(survey_scenario.compute_aggregate(variable, period = period) / 1e9)
-            logging.info(recette)
+            if variable in survey_scenario.tax_benefit_system.variables:
+                unit = 1e9
+                logging.info("Computed value for variable {}:".format(variable))
+                logging.info(survey_scenario.compute_aggregate(variable, period = period) / unit)
+
+            if variable == 'pop_totale':
+                unit = 1e6
+                logging.info("Computed value for variable {}:".format(variable))
+                logging.info(survey_scenario.calculate_variable("person_weight", period).sum() / unit)
+
+            if variable == 'nombre_fonctionnaires_actifs':
+                logging.info("Computed value for variable {}:".format(variable))
+                logging.info(
+                    (
+                        (survey_scenario.calculate_variable("formel_informel", period) == 1)
+                        * survey_scenario.calculate_variable("person_weight", period)
+                        ).sum()
+                    / unit
+                    )
+            if variable == 'nombre_prive_actifs':
+                logging.info("Computed value for variable {}:".format(variable))
+                logging.info(
+                    (
+                        (survey_scenario.calculate_variable("formel_informel", period) == 2)
+                        * survey_scenario.calculate_variable("person_weight", period)
+                        ).sum()
+                    / unit
+                    )
+
+            if variable == 'somme_salaires_fonctionnaires':
+                unit = 1e9
+                logging.info("Computed value for variable {}:".format(variable))
+                logging.info(
+                    (
+                        (survey_scenario.calculate_variable("formel_informel", period) == 1)
+                        * survey_scenario.calculate_variable("salaire", period)
+                        * survey_scenario.calculate_variable("person_weight", period)
+                        ).sum()
+                    / unit
+                    )
+
+            if variable == 'somme_salaires_prive':
+                unit = 1e9
+                logging.info("Computed value for variable {}:".format(variable))
+                logging.info(
+                    (
+                        (survey_scenario.calculate_variable("formel_informel", period) == 2)
+                        * survey_scenario.calculate_variable("salaire", period)
+                        * survey_scenario.calculate_variable("person_weight", period)
+                        ).sum()
+                    / unit
+                    )
+
+            logging.info("Tabulted value for variable {}:".format(variable))
+            logging.info(float(recette))
+            logging.info("")
+            unit = 1.0
 
 
 if __name__ == '__main__':

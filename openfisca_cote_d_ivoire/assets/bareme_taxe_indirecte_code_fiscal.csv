@@ -1,0 +1,5 @@
+﻿denomination_fiscale;present_dans_l_enquete;categorie_COICOP;categorie_comparable ;periode_debut;periode_fin;taux;type_tax;source
+lait;?;?;;;;0.09;taux_tva_max;
+pate_alimentaire_semoule_ble_dur;?;?;;;;1;taux_tva_reduit;
+materiel_production_energie_solaire;?;?;;;;;taux_tva_min;
+produis_petroliers;?;?;;;;;acise;

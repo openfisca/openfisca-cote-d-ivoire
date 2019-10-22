@@ -74,7 +74,7 @@ def create_dataframes_from_stata_data():
         'sex': 'sexe',
         'pond': 'person_weight',
         })
-
+    person_dataframe['sexe'] = person_dataframe.sexe.str.startswith('F')
     assert (dataframe.groupby('hhid')['weight'].nunique() == 1).all()
 
     household_weight = dataframe.groupby('hhid')['weight'].mean()

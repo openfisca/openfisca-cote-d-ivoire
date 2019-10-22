@@ -91,3 +91,17 @@ class nombre_de_parts(Variable):
             )
 
         return nombre_de_parts
+
+
+class sexe(Variable):
+    value_type = int
+    entity = Person
+    definition_period = ETERNITY
+    label = "Sexe"
+
+
+class formel_informel(Variable):
+    value_type = int
+    entity = Person
+    definition_period = ETERNITY
+    label = "formel_informel"
