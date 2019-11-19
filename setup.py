@@ -30,7 +30,7 @@ setup(
             "requests >=2.8",
             "openfisca-ceq >=0.2.6",
             "openfisca-survey-manager[dev] >=0.34.0, <1.0",
-            "yamllint >=1.11.1,<1.19",
+            "yamllint >=1.11.1,<1.20",
             ],
         'ceq': [
             "openfisca-ceq >=0.2.6",
