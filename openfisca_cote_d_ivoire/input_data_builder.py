@@ -121,7 +121,7 @@ def create_dataframes_from_stata_data():
 
     transferred_variables = list()
     for variable in household_variables:
-        # TODO improve by better filtering and better filling NAs
+    # TODO improve by better filtering and better filling NAs
         if variable in ['household_weight']:
             continue
         if variable not in person_dataframe.columns:
