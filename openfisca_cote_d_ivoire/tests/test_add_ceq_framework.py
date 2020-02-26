@@ -3,7 +3,7 @@ import logging
 import sys
 
 
-from openfisca_ceq.tools.tax_benefit_system_completion import add_ceq_framework
+from openfisca_ceq.tools.tax_benefit_system_ceq_completion import add_ceq_framework
 from openfisca_cote_d_ivoire import CountryTaxBenefitSystem as CoteDIvoireTaxBenefitSystem
 from openfisca_cote_d_ivoire.survey_scenarios import CoteDIvoireSurveyScenario
 from openfisca_cote_d_ivoire.tests.test_survey_scenario_from_stata_data import (

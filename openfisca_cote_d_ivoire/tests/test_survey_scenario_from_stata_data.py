@@ -2,7 +2,7 @@ import logging
 import os
 
 
-from openfisca_ceq.tools.tax_benefit_system_completion import (
+from openfisca_ceq.tools.tax_benefit_system_ceq_completion import (
     add_ceq_framework,
     ceq_variables,
     get_all_neutralized_variables,
