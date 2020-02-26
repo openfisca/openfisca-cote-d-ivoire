@@ -17,8 +17,8 @@ log = logging.getLogger(__name__)
 
 def test_add_ceq_framework_to_cote_d_ivoire():
     tax_benefit_system = CoteDIvoireTaxBenefitSystem()
-    ceq_enhanced_tax_benefit_system = add_ceq_framework(tax_benefit_system)
     if not data_is_available:
+        ceq_enhanced_tax_benefit_system = add_ceq_framework(tax_benefit_system)
         return
     data = create_data_from_stata()
     survey_scenario = CoteDIvoireSurveyScenario(
