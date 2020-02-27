@@ -38,13 +38,12 @@ def test_survey_scenario(create_dataframes = True):
 def test_ceq_survey_scenario(create_dataframes = True):
     circleci = 'CIRCLECI' in os.environ
     if circleci or not data_is_available:
-        from openfisca_ceq.tools.tax_benefit_system_ceq_completion import (
-            add_ceq_framework,
-            ceq_variables,
-            get_all_neutralized_variables,
-            )
-
         return
+    from openfisca_ceq.tools.tax_benefit_system_ceq_completion import (
+        add_ceq_framework,
+        ceq_variables,
+        get_all_neutralized_variables,
+        )
     tax_benefit_system = CoteDIvoireTaxBenefitSystem()
     ceq_enhanced_tax_benefit_system = add_ceq_framework(tax_benefit_system)
     if not data_is_available:
