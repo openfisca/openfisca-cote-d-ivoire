@@ -25,5 +25,3 @@ test_case = {
 
 simulation_builder = SimulationBuilder()
 simulation = simulation_builder.build_from_entities(tax_benefit_system, test_case)
-
-assert simulation.calculate('famille', period = year) == 70000 * .
