@@ -1,8 +1,9 @@
-# -*- coding: utf-8 -*-
-
 import pandas as pd
 
-from openfisca_survey_manager.aggregates import AbstractAggregates
+try:
+    from openfisca_survey_manager.aggregates import AbstractAggregates
+else:
+    pass
 
 
 class CoteDIvoireAggregates(AbstractAggregates):
