@@ -6,20 +6,23 @@ except Exception:
     pass
 
 
-class CoteDIvoireAggregates(AbstractAggregates):
-    aggregate_variables = ['impot_general_revenu']
-    amount_unit = 1e9
-    currency = "F CFA"
-    beneficiaries_unit = 1e3
+try:
+    class CoteDIvoireAggregates(AbstractAggregates):
+        aggregate_variables = ['impot_general_revenu']
+        amount_unit = 1e9
+        currency = "F CFA"
+        beneficiaries_unit = 1e3
 
-    def load_actual_data(self, year = None):
-        from openfisca_cote_d_ivoire.tests.test_aggregates import read_aggregates
-        recette_by_variable = read_aggregates()
-        amounts = pd.Series(recette_by_variable)
-        return pd.DataFrame(data = {
-            "actual_amount": amounts,
-            # "actual_beneficiaries": beneficiaries[str(year)],
-            })
+        def load_actual_data(self, year = None):
+            from openfisca_cote_d_ivoire.tests.test_aggregates import read_aggregates
+            recette_by_variable = read_aggregates()
+            amounts = pd.Series(recette_by_variable)
+            return pd.DataFrame(data = {
+                "actual_amount": amounts,
+                # "actual_beneficiaries": beneficiaries[str(year)],
+                })
+except Exception:
+    pass
 
 
 if __name__ == '__main__':
