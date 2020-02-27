@@ -9,10 +9,10 @@ class accidents_du_travail(Variable):
     label = "Cotisation sociale accidents du travail (employeur)"
 
     def formula(person, period, parameters):
-        salaire_annuel = person('salaire', period)
+        salaire_brut_annuel = person('salaire_brut', period)
         accidents_du_travail = parameters(period).prelevements_obligatoires.prelevements_sociaux.accidents_du_travail
         taux_minimal = accidents_du_travail.taux_minimal
-        return taux_minimal * salaire_annuel
+        return taux_minimal * salaire_brut_annuel
 
 
 class famille(Variable):
@@ -22,9 +22,9 @@ class famille(Variable):
     label = "Cotisation sociale prestations familiales (employeur)"
 
     def formula(person, period, parameters):
-        salaire_annuel = person('salaire', period)
+        salaire_brut_annuel = person('salaire_brut', period)
         famille = parameters(period).prelevements_obligatoires.prelevements_sociaux.prestations_familiales
-        return 12 * famille.calc(salaire_annuel / 12)
+        return 12 * famille.calc(salaire_brut_annuel / 12)
 
 
 class retraite_employeur(Variable):
@@ -34,9 +34,9 @@ class retraite_employeur(Variable):
     label = "Cotisation sociale retraite (employeur)"
 
     def formula(person, period, parameters):
-        salaire_annuel = person('salaire', period)
+        salaire_brut_annuel = person('salaire_brut', period)
         retraite = parameters(period).prelevements_obligatoires.prelevements_sociaux.retraite
-        return 12 * retraite.employeur.calc(salaire_annuel / 12)
+        return 12 * retraite.employeur.calc(salaire_brut_annuel / 12)
 
 
 class retraite_salarie(Variable):
@@ -46,6 +46,6 @@ class retraite_salarie(Variable):
     label = "Cotisation sociale retraite (salarié)"
 
     def formula(person, period, parameters):
-        salaire_annuel = person('salaire', period)
+        salaire_brut_annuel = person('salaire_brut', period)
         retraite = parameters(period).prelevements_obligatoires.prelevements_sociaux.retraite
-        return 12 * retraite.salarie.calc(salaire_annuel / 12)
+        return 12 * retraite.salarie.calc(salaire_brut_annuel / 12)

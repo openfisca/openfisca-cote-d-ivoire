@@ -10,6 +10,13 @@ class salaire(Variable):
     label = "Salaires et Traitements tirés d'une activitée formelle (activité principale)"
 
 
+class salaire_brut(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    label = "Salaires et traitements brut tirés d'une activitée formelle"
+
+
 class revenus_activites_secondaires(Variable):
     value_type = float
     entity = Person
