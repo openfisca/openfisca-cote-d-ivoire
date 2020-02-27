@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from openfisca_core.model_api import *
 from openfisca_cote_d_ivoire.entities import *
 
@@ -12,40 +10,6 @@ class impots_indirects(Variable):
 
     def formula(household, period):
         return household('tva_total', period) + household('droit_de_douane', period)
-
-
-class tva_total(Variable):
-    value_type = float
-    entity = Household
-    definition_period = YEAR
-    label = "Taxe sur la valeur ajoutée"
-
-    def formula(household, period, parameters):
-        return household('tva_taux_normal', period) + household('tva_taux_reduit', period)
-
-
-class tva_taux_normal(Variable):
-    value_type = float
-    entity = Household
-    definition_period = YEAR
-    label = "Taxe sur la valeur ajoutée - taux normal"
-
-    def formula(household, period, parameters):
-        exp_tva_normal = household('exp_tva_normal', period)
-        taux = parameters(period).taxes.tva.taux_normal
-        return exp_tva_normal * taux
-
-
-class tva_taux_reduit(Variable):
-    value_type = float
-    entity = Household
-    definition_period = YEAR
-    label = "Taxe sur la valeur ajoutée - taux réduit"
-
-    def formula(household, period, parameters):
-        exp_tva_reduit = household('exp_tva_reduit', period)
-        taux = parameters(period).taxes.tva.taux_reduit
-        return exp_tva_reduit * taux
 
 
 class droits_de_douane(Variable):

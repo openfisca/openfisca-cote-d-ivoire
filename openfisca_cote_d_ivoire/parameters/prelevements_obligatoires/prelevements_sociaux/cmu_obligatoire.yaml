@@ -1,0 +1,4 @@
+description: CMU obligatoire (par mois)
+unit: currency
+values:
+  1950-01-01: 500

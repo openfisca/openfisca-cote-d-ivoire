@@ -1,0 +1,4 @@
+description: Taux de cotisation minimale accidents du travail (employeur)
+unit: /1
+values:
+  1950-01-01: .05

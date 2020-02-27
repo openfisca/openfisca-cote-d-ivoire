@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 
 from openfisca_core.model_api import *
 from openfisca_cote_d_ivoire.entities import *
@@ -19,18 +17,18 @@ class revenus_activites_secondaires(Variable):
     label = "Tous les revenus tirés des activitées secondaires"
 
 
-class pension(Variable):
+class pension_retraite(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
     label = "Pension de retraite"
 
 
-class revenus_locatifs(Variable):
+class revenu_locatif(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
-    label = "Revenus tirés de la location de propriétés"
+    label = "Revenu tiré de la location de propriétés"
 
 
 class interets_dividendes(Variable):
@@ -82,7 +80,7 @@ class revenus_complementaires_miel(Variable):
     label = "Revenus tirés de la vente d'autres produits agricoles"
 
 
-class auto_consommation(Variable):
+class autoconsommation(Variable):
     value_type = float
     entity = Household
     definition_period = YEAR

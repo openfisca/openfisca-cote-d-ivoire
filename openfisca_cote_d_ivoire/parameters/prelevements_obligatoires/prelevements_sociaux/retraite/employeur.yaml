@@ -1,0 +1,14 @@
+description: Barème des cotisations employeur de retraite (par mois)
+brackets:
+- rate:
+    1950-01-01:
+      value: .077
+  threshold:
+    1950-01-01:
+      value: 0.0
+- rate:
+    1950-01-01:
+      value: 0.0
+  threshold:
+    1950-01-01:
+      value: 1647315.0
