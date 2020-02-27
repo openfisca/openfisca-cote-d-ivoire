@@ -2,7 +2,7 @@ import pandas as pd
 
 try:
     from openfisca_survey_manager.aggregates import AbstractAggregates
-else:
+except Exception:
     pass
 
 
