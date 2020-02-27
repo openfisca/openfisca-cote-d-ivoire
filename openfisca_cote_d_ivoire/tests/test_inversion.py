@@ -18,7 +18,7 @@ year = 2013
 test_case = {
     'persons': {
         'A': {
-            'salaire': {year: 100000}
+            'salaire': {year: 12 * 100000}
             },
         },
     }
@@ -26,4 +26,4 @@ test_case = {
 simulation_builder = SimulationBuilder()
 simulation = simulation_builder.build_from_entities(tax_benefit_system, test_case)
 
-print(simulation.calculate('famille', period = year))
+assert simulation.calculate('famille', period = year) == 70000 * .

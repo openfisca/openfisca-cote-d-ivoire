@@ -2,13 +2,13 @@ description: Barème des cotisations salariales de retraite
 brackets:
 - rate:
     1950-01-01:
-      value: 0.0
+      value: .063
   threshold:
     1950-01-01:
-      value: .063
+      value: 0.0
 - rate:
     1950-01-01:
-      value: 1647315.0
+      value: 0.0
   threshold:
     1950-01-01:
-      value: 0.0
+      value: 1647315.0
