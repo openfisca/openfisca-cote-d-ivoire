@@ -4,15 +4,23 @@
 - name: Non imposable
   period: 2016
   input:
-    salaire: 1000
+    salaire_imposable: 1000
   output:
-    salaire: 1000
+    salaire_imposable: 1000
     impot_general_revenu: 0
 
 - name: Imposable première tranche
   period: 2016
   input:
-    salaire: 1250 + 100
+    salaire_imposable: 1250 + 100
   output:
-    salaire: 1250 + 100
+    salaire_imposable: 1250 + 100
     impot_general_revenu: 1.6
+
+
+- name: Imposable première tranche
+  period: 2016
+  input:
+    salaire_imposable: 1530586.8
+  output:
+    impot_general_revenu: 24469.387
