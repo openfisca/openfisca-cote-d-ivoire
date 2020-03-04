@@ -7,3 +7,23 @@
     salaire_imposable: 1219491.9
     salaire_brut: 1301485.5
     impot_general_revenu: 19491.87
+
+
+- name: Salarié au salaire moyen
+  period: 2016
+  input:
+    salaire: 1219491.9 - 19491.87
+  output:
+    salaire_imposable: 1219491.9
+    impot_general_revenu: 19491.87
+
+
+- name: Salarié au salaire moyen
+  period: 2016
+  input:
+    salaire: 1219491.9 - 19471.87
+    marie: True
+
+  output:
+    salaire_imposable: 1219491.9
+    impot_general_revenu: 19471.87
