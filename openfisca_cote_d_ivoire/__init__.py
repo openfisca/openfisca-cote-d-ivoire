@@ -31,4 +31,3 @@ class CountryTaxBenefitSystem(TaxBenefitSystem):
         if inversion:
             from openfisca_cote_d_ivoire.inversion import salaire_brut
             self.update_variable(salaire_brut)
-
