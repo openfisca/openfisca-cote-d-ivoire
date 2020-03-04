@@ -16,6 +16,7 @@
   output:
     salaire_imposable: 1219491.9
     impot_general_revenu: 19491.87
+    salaire_net_a_payer: 1219491.9 - 19491.87
 
 
 - name: Salarié au salaire moyen
@@ -27,3 +28,4 @@
   output:
     salaire_imposable: 1219491.9
     impot_general_revenu: 19471.87
+    salaire_net_a_payer: 1219491.9 - 19471.87

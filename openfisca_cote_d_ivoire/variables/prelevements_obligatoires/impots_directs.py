@@ -30,7 +30,6 @@ class impot_general_revenu(Variable):
         return impot_general_revenu
 
 
-
 class salaire_net_a_payer(Variable):
     value_type = float
     entity = Person

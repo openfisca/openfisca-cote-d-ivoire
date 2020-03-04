@@ -14,7 +14,8 @@ class accidents_du_travail(Variable):
         taux_minimal = accidents_du_travail.taux_minimal
         return taux_minimal * salaire_brut_annuel
 
-class  cotisations_salariales(Variable):
+
+class cotisations_salariales(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
@@ -24,7 +25,7 @@ class  cotisations_salariales(Variable):
         return person('retraite_salarie', period)
 
 
-class  cotisations_employeur(Variable):
+class cotisations_employeur(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
