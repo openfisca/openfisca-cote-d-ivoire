@@ -23,7 +23,7 @@ class CountryTaxBenefitSystem(TaxBenefitSystem):
         if coicop:
             try:
                 from openfisca_ceq.tests.test_indirect_tax_variables_generator import add_coicop_item_to_tax_benefit_system
-                add_coicop_item_to_tax_benefit_system(self, country = "mali")
+                add_coicop_item_to_tax_benefit_system(self, country = "cote_d_ivoire")
             except (configparser.NoSectionError, ModuleNotFoundError) as e:
                 log.info("No coicop consumption variable: \n")
                 log.info(e)

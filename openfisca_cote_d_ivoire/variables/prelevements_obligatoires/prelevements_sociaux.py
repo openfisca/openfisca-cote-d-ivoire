@@ -106,7 +106,24 @@ class sante_employeur(Variable):
     definition_period = YEAR
     label = "Cotisation santé employeur"
 
-    def formula(person, period, parameters):
+    def formula_2019_07_01(person, period, parameters):
+        # TODO FIXME car pas clair
+        # https://www.cleiss.fr/docs/regimes/regime_cotedivoire.html#cmu
         salarie = person('salaire_brut', period) > 0
         cotisation = parameters(period).prelevements_obligatoires.prelevements_sociaux.cmu_obligatoire
         return 12 * salarie * cotisation
+
+
+class sante_salarie(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    label = "Cotisation santé employeur"
+
+    def formula_2019_07_01(person, period, parameters):
+        # TODO FIXME car pas clair
+        # https://www.cleiss.fr/docs/regimes/regime_cotedivoire.html#cmu
+        salarie = person('salaire_brut', period) > 0
+        cotisation = parameters(period).prelevements_obligatoires.prelevements_sociaux.cmu_obligatoire
+        return 12 * salarie * cotisation
+
