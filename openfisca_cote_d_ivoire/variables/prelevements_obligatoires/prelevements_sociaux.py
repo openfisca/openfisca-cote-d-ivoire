@@ -126,4 +126,3 @@ class sante_salarie(Variable):
         salarie = person('salaire_brut', period) > 0
         cotisation = parameters(period).prelevements_obligatoires.prelevements_sociaux.cmu_obligatoire
         return 12 * salarie * cotisation
-
