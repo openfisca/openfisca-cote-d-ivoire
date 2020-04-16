@@ -52,15 +52,15 @@ from openfisca_cote_d_ivoire.entities import *
 #     label = "Payroll Tax"
 
 
-class personal_income_tax(Variable):
-    value_type = float
-    entity = Household
-    definition_period = YEAR
-    label = "Personal Income Tax"
+# class personal_income_tax(Variable):
+#     value_type = float
+#     entity = Household
+#     definition_period = YEAR
+#     label = "Personal Income Tax"
 
-    def formula(household, period):
-        impot_general_revenu_individu = household.members('impot_general_revenu', period)
-        return household.sum(impot_general_revenu_individu)
+#     def formula(household, period):
+#         impot_general_revenu_individu = household.members('impot_general_revenu', period)
+#         return household.sum(impot_general_revenu_individu)
 
 
 # class property_tax(Variable):

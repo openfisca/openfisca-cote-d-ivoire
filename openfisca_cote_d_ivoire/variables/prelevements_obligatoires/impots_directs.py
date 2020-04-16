@@ -9,6 +9,16 @@ class impots_directs(Variable):
     label = "Impôts directs payés par le ménage"
 
     def formula(household, period):
+        return household("impot_revenu", period)
+
+
+class impot_revenu(Variable):
+    value_type = float
+    entity = Household
+    definition_period = YEAR
+    label = "Impôts sur le rveenu payés par le ménage"
+
+    def formula(household, period):
         impot_general_revenu_individu = household.members('impot_general_revenu', period)
         return household.sum(impot_general_revenu_individu)
 
