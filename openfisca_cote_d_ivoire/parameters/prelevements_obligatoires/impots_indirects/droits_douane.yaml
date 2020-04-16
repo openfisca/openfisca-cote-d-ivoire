@@ -1,0 +1,70 @@
+exonere:
+  description: Biens sociaux essentiels
+  values:
+    # TODO corriger date si nécessaire
+    2007-01-01:
+      value: 0
+  metadata:
+    unit: /1
+equipements:
+  description: Produits de première nécessité, matières premières de base, biens d’équipement, intrants spécifiques
+  values:
+    # TODO corriger date si nécessaire
+    2007-01-01:
+      value: 0.05
+  metadata:
+    unit: /1
+consommation_intermediaire:
+  description: Intrants et produits intermédiaires
+  values:
+    # TODO corriger date si nécessaire
+    2007-01-01:
+      value: 0.10
+  metadata:
+    unit: /1
+consommation_finale:
+  description: Biens de consommation finale
+  values:
+    # TODO corriger date si nécessaire
+    2007-01-01:
+      value: 0.20
+  metadata:
+    unit: /1
+biens_specifiques:
+  description: Biens spécifiques pour le développement économique
+  values:
+    # TODO corriger date si nécessaire
+    2007-01-01:
+      value: 0.35
+  metadata:
+    unit: /1
+
+
+redevance_statistique:
+  description: Redevance Statistique (RS)
+  values:
+    # TODO corriger date si nécessaire
+    2007-01-01:
+      value: 0.01
+  metadata:
+    unit: /1
+
+prelevement_communautaire_de_solidarite:
+  description: Prélèvement Communautaire de Solidarité (PCS)
+  values:
+    # TODO corriger date si nécessaire
+    2007-01-01:
+      value: 0.01
+  metadata:
+    unit: /1
+
+metadata:
+  href: http://www.dgi.cgici.com/indexs.htm
+  order:
+  - exonere
+  - equipements
+  - consommation_intermediaire
+  - consommation_finale
+  - biens_specifiques
+  - redevance_statistique
+  - prelevement_communautaire_de_solidarite

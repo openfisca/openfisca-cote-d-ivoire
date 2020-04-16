@@ -15,7 +15,7 @@ COUNTRY_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class CountryTaxBenefitSystem(TaxBenefitSystem):
-    def __init__(self, coicop = True):
+    def __init__(self, coicop = True, inversion = True):
         super(CountryTaxBenefitSystem, self).__init__(entities.entities)
         self.add_variables_from_directory(os.path.join(COUNTRY_DIR, 'variables'))
         param_path = os.path.join(COUNTRY_DIR, 'parameters')
@@ -23,8 +23,11 @@ class CountryTaxBenefitSystem(TaxBenefitSystem):
         if coicop:
             try:
                 from openfisca_ceq.tests.test_indirect_tax_variables_generator import add_coicop_item_to_tax_benefit_system
-                add_coicop_item_to_tax_benefit_system(self, country = "mali")
+                add_coicop_item_to_tax_benefit_system(self, country = "cote_d_ivoire")
             except (configparser.NoSectionError, ModuleNotFoundError) as e:
                 log.info("No coicop consumption variable: \n")
                 log.info(e)
                 log.info("Passing")
+        if inversion:
+            from openfisca_cote_d_ivoire.inversion import salaire_brut
+            self.update_variable(salaire_brut)
