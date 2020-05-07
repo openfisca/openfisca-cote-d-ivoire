@@ -1,0 +1,59 @@
+description: Impôt sur le revenu des créances
+# L’impôt sur le revenu des créances s’applique aux intérêts et arrérages et tous autres produits:
+# des créances hypothécaires, privilégiées et chirographaires, à l’exclusion
+# de toutes opérations de crédit commercial ne présentant pas le caractère
+# juridique d’un prêt;
+# des dépôts de sommes d’argent à vue ou à échéance fixe, quel que soit le
+# dépositaire et quelle que soit l’affectation du dépôt;
+# des cautionnements en numéraire;
+# des comptes courants;
+# des emprunts non obligatoires.
+# Le taux de l’impôt est fixé à 18%.
+# En ce qui concerne les intérêts, arrérages et autres produits de dépôts et des
+# comptes courants ouverts dans les écritures d’un banquier ou d’une maison
+# de banque, le taux est fixé comme suit:
+
+taux:
+  description: Taux de l'impôt sur les créances
+  values:
+    2008-01-01: 0.18  # TODO date ?
+
+comptes_de_depots_inferieur_a_1_an:
+  description: Taux appliqué aux revenus des comptes de dépôts à échéance inférieure ou égale à 1 an
+  values:
+    2008-01-01: 0.165  # TODO date ?
+
+comptes_de_depots_entre_1_et_3_ans:
+  description: Taux appliqué aux revenus des comptes de dépôts à échéance supérieure à 1 an et inférieure ou égale à 3 ans
+  values:
+    2008-01-01: 0.1  # TODO date ?
+
+comptes_de_depots_entre_3_et_5_ans:
+  description: Taux appliqué aux revenus des comptes de dépôts à échéance supérieure à 3 ans et inférieure ou égale à 5 ans
+  values:
+    2008-01-01: 0.05  # TODO date ?
+
+comptes_de_depots_superieur_a_5_ans:
+  description: Taux appliqué aux revenus des comptes de dépôts à échéances supérieure à 5 ans
+  values:
+    2008-01-01: 0.01  # TODO date ?
+
+comptes_courants_particuliers:
+  description: Taux appliqué aux compte courants des particuliers
+  values:
+    2008-01-01: 0.135  # TODO date ?
+
+comptes_courants_entreprises:
+  description: Taux appliqué aux compte courants des entreprises
+  values:
+    2008-01-01: 0.165  # TODO date ?
+
+bons_et_obligations_tresor_moins_1_an:
+  description: Taux appliqué aux bons et obligations trésor à 3 mois, 6 mois ou 12 mois d’échéance
+  values:
+    2008-01-01: 0.1  # TODO date ?
+
+bons_et_obligations_tresor_entre_1_an_et_5_ans:
+  description: Taux appliqué aux bons et obligations trésor de 3 à 5 ans d’échéance supérieure à 3 ans et inférieure à 5 ans.
+  values:
+    2008-01-01: 0.05  # TODO date ?

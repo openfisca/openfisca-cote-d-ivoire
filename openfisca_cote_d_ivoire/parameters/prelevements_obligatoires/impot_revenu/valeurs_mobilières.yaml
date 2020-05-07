@@ -1,0 +1,24 @@
+description: Impôt sur le revenu des valeurs mobilières (IRVM)
+# L’impôt sur le revenu des valeurs mobilières s’applique:
+# à tous les bénéfices ou produits qui ne sont pas mis en réserve ou incorporés
+# au capital aux intérêts et arrérages et tous autres produits des obligations émises
+# par les établissements publics et par les sociétés, compagnies et entreprises
+# ayant leur siège social en Côte d’ Ivoire;
+# au montant des remboursements et amortissements totaux ou partiels que
+# les sociétés effectuent sur le montant de leurs actions, parts d’intérêts ou
+# commandites, avant leur dissolution ou leur mise à disposition.
+dividendes:
+  description: Taux appliqué au dividendes régulièrement mis en paiement par les sociétés
+  unit: /1
+  values:
+    2008-01-01: 0.1  # TODO date ?
+
+lots_primes_moins_de_5_ans:
+  description: Taux appliqué à tous les produits, lots et primes de remboursement payés aux porteurs d’obligations émises en Côte d’Ivoire et remboursées en cinq ans au moins
+  values:
+    2008-01-01: 0.02  # TODO date ?
+
+lots_obligations_et_autres:
+  description: Taux appliqué à tous les produits, lots et primes de remboursement payés aux porteurs d’obligations émises en Côte d’Ivoire et remboursées en cinq ans au moins
+  values:
+    2008-01-01: 0.15  # TODO date ?

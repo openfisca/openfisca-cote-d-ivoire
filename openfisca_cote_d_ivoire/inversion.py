@@ -2,6 +2,47 @@ from openfisca_core.model_api import *
 from openfisca_cote_d_ivoire.entities import *
 
 
+class autres_revenus_du_capital_brut(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    label = "Revenu des capitaux brut"
+
+    def formula(individu, period, parameters):
+        taux = parameters(period).prelevements_obligatoires.impot_revenu.creances.taux
+        return individu('autres_revenus_du_capital', period) / (1 - taux)
+
+
+class revenu_foncier_brut(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    label = "Revenu locatif (foncier) brut"
+
+    def formula(individu, period, parameters):
+        taux = parameters(period).prelevements_obligatoires.impot_revenu.foncier
+        return individu('revenu_locatif', period) / (1 - taux)
+
+
+class revenu_non_salarie_brut(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    label = "Revenu non salarie brut"
+
+    def formula(individu, period, parameters):
+        return individu('revenu_non_salarie', period)
+
+
+class pension_retraite_brut(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+
+    def formula(individu, period, parameters):
+        return individu('pension_retraite', period)
+
+
 class salaire_brut(Variable):
     value_type = float
     entity = Person

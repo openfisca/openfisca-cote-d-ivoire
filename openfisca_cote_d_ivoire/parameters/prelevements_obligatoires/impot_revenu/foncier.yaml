@@ -1,0 +1,6 @@
+description: Impôt sur le revenu foncier (IRF)
+reference: Articles 149 et 156 du Code générale des impôts (http://www.dgi.gouv.ci/index.php/impots-et-taxes/24-vos-besoins/93-impots-fonciers, http://www.dgi.gouv.ci/images/PDF/depliant_impot_foncier.pdf)
+unit: /1
+values:
+  2008-01-01: 0.03
+

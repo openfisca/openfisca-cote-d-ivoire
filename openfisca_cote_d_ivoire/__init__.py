@@ -29,5 +29,16 @@ class CountryTaxBenefitSystem(TaxBenefitSystem):
                 log.info(e)
                 log.info("Passing")
         if inversion:
-            from openfisca_cote_d_ivoire.inversion import salaire_brut
+            from openfisca_cote_d_ivoire.inversion import (
+                autres_revenus_du_capital_brut,
+                pension_retraite_brut,
+                revenu_foncier_brut,
+                revenu_non_salarie_brut,
+                salaire_brut,
+                )
+
+            self.update_variable(autres_revenus_du_capital_brut)
+            self.update_variable(pension_retraite_brut)
+            self.update_variable(revenu_foncier_brut)
+            self.update_variable(revenu_non_salarie_brut)
             self.update_variable(salaire_brut)
