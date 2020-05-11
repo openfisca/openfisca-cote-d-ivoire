@@ -20,7 +20,7 @@ setup(
     extras_require = {
         'dev': [
             "autopep8 ==1.5.2",
-            "flake8 >=3.5.0,<3.8.0",
+            "flake8 >=3.5.0,<3.9.0",
             "flake8-print",
             "pycodestyle >=2.3.0,<2.6.0",  # To avoid incompatibility with flake
             "pytest <6.0",
