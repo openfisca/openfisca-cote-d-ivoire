@@ -21,7 +21,7 @@ class impot_revenu(Variable):
     def formula(household, period):
         impot_general_revenu_individu = household.members('impot_general_revenu', period)
         impot_revenu_foncier_individu = household.members('impot_revenu_foncier', period)
-        impot_revenu_creances_individu = household.members('iimpot_revenu_creances', period)
+        impot_revenu_creances_individu = household.members('impot_revenu_creances', period)
         return household.sum(
             impot_general_revenu_individu
             + impot_revenu_foncier_individu
