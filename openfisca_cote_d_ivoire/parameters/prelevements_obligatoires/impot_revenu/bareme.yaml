@@ -8,67 +8,44 @@ brackets:
       value: 0.0
 - rate:
     1950-01-01:
-      value: 0.02
+      value: 0.09
   threshold:
     1950-01-01:
-      value: 1000
+      value: 300000
 - rate:
     1950-01-01:
-      value: 0.1
+      value: 0.13
   threshold:
     1950-01-01:
-      value: 2200000
+      value: 547000
 - rate:
     1950-01-01:
-      value: 0.15
+      value: 0.167
   threshold:
     1950-01-01:
-      value: 3600000
+      value: 979000
 - rate:
     1950-01-01:
       value: 0.20
   threshold:
     1950-01-01:
-      value: 5200000
-- rate:
-    1950-01-01:
-      value: 0.24
-  threshold:
-    1950-01-01:
-      value: 7200000
+      value: 1519000
 - rate:
     1950-01-01:
       value: 0.26
   threshold:
     1950-01-01:
-      value: 9600000
+      value: 2644000
 - rate:
     1950-01-01:
-      value: 0.29
+      value: 0.31
   threshold:
     1950-01-01:
-      value: 12600000
+      value: 4669000
 - rate:
     1950-01-01:
-      value: 0.32
+      value: 0.375
   threshold:
     1950-01-01:
-      value: 20000000
-- rate:
-    1950-01-01:
-      value: 0.34
-  threshold:
-    1950-01-01:
-      value: 30000000
-- rate:
-    1950-01-01:
-      value: 0.35
-  threshold:
-    1950-01-01:
-      value: 40000000
-- rate:
-    1950-01-01:
-      value: 0.36
-  threshold:
-    1950-01-01:
-      value: 50000000
+      value: 10106000
+
