@@ -92,14 +92,7 @@ class nombre_de_parts(Variable):
 
 
 class sexe(Variable):
-    value_type = int
+    value_type = bool
     entity = Person
     definition_period = ETERNITY
-    label = "Sexe"
-
-
-class formel_informel(Variable):
-    value_type = int
-    entity = Person
-    definition_period = ETERNITY
-    label = "formel_informel"
+    label = "Sexe (True pour les femmes)"

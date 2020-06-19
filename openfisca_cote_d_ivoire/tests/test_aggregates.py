@@ -77,7 +77,7 @@ def test_aggregates():
                 logging.info("Computed value for variable {}:".format(variable))
                 logging.info(
                     (
-                        (survey_scenario.calculate_variable("formel_informel", period) == 1)
+                        (survey_scenario.calculate_variable("formel_informel", period) ==)
                         * survey_scenario.calculate_variable("person_weight", period)
                         ).sum()
                     / unit
