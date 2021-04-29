@@ -14,7 +14,7 @@ setup(
     url='https://github.com/openfisca/openfisca-cote-d-ivoire',
     include_package_data = True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >=34.2.6,<35.0',
+        'OpenFisca-Core >=34.2.6,<36.0',
         'python-slugify >=3.0.2',
         ],
     extras_require = {
